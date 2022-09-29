@@ -60,8 +60,8 @@ all: main-build
 main-build: Lab2_OUTPUT_74HC595_LED.elf secondary-outputs
 
 # Tool invocations
-Lab2_OUTPUT_74HC595_LED.elf Lab2_OUTPUT_74HC595_LED.map: $(OBJS) $(USER_OBJS) E:\STM32F411VET6_LuanVan_LapTrinh\Lab2_OUTPUT_74HC595_LED\STM32F411VETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Lab2_OUTPUT_74HC595_LED.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\STM32F411VET6_LuanVan_LapTrinh\Lab2_OUTPUT_74HC595_LED\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab2_OUTPUT_74HC595_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Lab2_OUTPUT_74HC595_LED.elf Lab2_OUTPUT_74HC595_LED.map: $(OBJS) $(USER_OBJS) E:\STM32F411VET6_LuanVan_LapTrinh\STM32F411VET6\Lab2_OUTPUT_74HC595_LED\STM32F411VETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Lab2_OUTPUT_74HC595_LED.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\STM32F411VET6_LuanVan_LapTrinh\STM32F411VET6\Lab2_OUTPUT_74HC595_LED\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab2_OUTPUT_74HC595_LED.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
