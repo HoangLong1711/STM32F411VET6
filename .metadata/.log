@@ -31,3 +31,21 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2022-09-29 10:14:25.447
 !MESSAGE Indexed 'RFID_SPI' (21 sources, 81 headers) in 1.04 sec: 4,259 declarations; 17,944 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.009%)
+!SESSION 2022-09-29 13:57:03.861 -----------------------------------------------
+eclipse.buildId=Version 1.9.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-09-29 13:57:12.227
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-09-29 13:57:12.305
+!MESSAGE Log4j initialized with config file E:\STM32F411VET6_LuanVan_LapTrinh\STM32F411VET6\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-09-29 13:57:17.006
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-09-29 14:02:13.312
+!MESSAGE Indexed 'Lab6_LED_MATRIX' (21 sources, 81 headers) in 2.63 sec: 4,259 declarations; 17,944 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.009%)

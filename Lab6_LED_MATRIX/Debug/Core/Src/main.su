@@ -1,0 +1,8 @@
+../Core/Src/main.c:72:6:CLK	8	static
+../Core/Src/main.c:78:6:LATCH	8	static
+../Core/Src/main.c:84:6:DATA	16	static
+../Core/Src/main.c:97:6:pushHEX	24	static
+../Core/Src/main.c:114:5:main	16	static
+../Core/Src/main.c:170:6:SystemClock_Config	88	static
+../Core/Src/main.c:212:13:MX_GPIO_Init	40	static
+../Core/Src/main.c:240:6:Error_Handler	4	static,ignoring_inline_asm
