@@ -1,4 +1,4 @@
-16:58:34 **** Incremental Build of configuration Debug for project Lab6_LED_MATRIX ****
+13:56:28 **** Incremental Build of configuration Debug for project Lab6_LED_MATRIX ****
 make -j8 all 
 arm-none-eabi-size   Lab6_LED_MATRIX.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   Lab6_LED_MATRIX.elf
 Finished building: default.size.stdout
  
 
-16:58:34 Build Finished. 0 errors, 0 warnings. (took 147ms)
+13:56:28 Build Finished. 0 errors, 0 warnings. (took 152ms)
 
