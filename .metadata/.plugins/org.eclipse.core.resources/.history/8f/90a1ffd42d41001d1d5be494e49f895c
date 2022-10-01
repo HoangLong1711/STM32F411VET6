@@ -170,7 +170,7 @@ int main(void)
 	          pushHEX(colsSelect[7-step+i]);
 	          pushHEX(0x00);
 	          pushHEX(0x00);
-	          pushHEX(rowsData[2][i]);
+	          pushHEX(rowsDATA[2][i]);
 	          LATCH();
 	          HAL_Delay(1);
 	        }
@@ -189,7 +189,7 @@ int main(void)
 	          pushHEX(colsSelect[7-step1+j]);
 	          pushHEX(0x00);
 	          pushHEX(0x00);
-	          pushHEX(rowsData[1][j]);
+	          pushHEX(rowsDATA[1][j]);
 	          LATCH();
 	          HAL_Delay(1);
 	        }
@@ -199,7 +199,7 @@ int main(void)
 	          pushHEX(colsSelect[6-i-step1]);
 	          pushHEX(0x00);
 	          pushHEX(0x00);
-	          pushHEX(rowsData[2][7-i]);
+	          pushHEX(rowsDATA[2][7-i]);
 	          LATCH();
 	          HAL_Delay(1);
 	        }
@@ -209,7 +209,7 @@ int main(void)
 	          pushHEX(0x00);
 	          pushHEX(colsSelect[7-step1+a]);
 	          pushHEX(0x00);
-	          pushHEX(rowsData[2][a]);
+	          pushHEX(rowsDATA[2][a]);
 	          LATCH();
 	          HAL_Delay(1);
 	        }
@@ -229,7 +229,7 @@ int main(void)
 	          pushHEX(colsSelect[7-step2+j]);
 	          pushHEX(0x00);
 	          pushHEX(0x00);
-	          pushHEX(rowsData[3][j]);
+	          pushHEX(rowsDATA[3][j]);
 	          LATCH();
 	          HAL_Delay(1);
 	        }
@@ -239,7 +239,7 @@ int main(void)
 	          pushHEX(colsSelect[6-i-step2]);
 	          pushHEX(0x00);
 	          pushHEX(0x00);
-	          pushHEX(rowsData[1][7-i]);
+	          pushHEX(rowsDATA[1][7-i]);
 	          LATCH();
 	          HAL_Delay(1);
 	        }
@@ -249,7 +249,7 @@ int main(void)
 	          pushHEX(0x00);
 	          pushHEX(colsSelect[7-step2+a]);
 	          pushHEX(0x00);
-	          pushHEX(rowsData[1][a]);
+	          pushHEX(rowsDATA[1][a]);
 	          LATCH();
 	          HAL_Delay(1);
 	        }
@@ -259,7 +259,7 @@ int main(void)
 	          pushHEX(0x00);
 	          pushHEX(colsSelect[6-i-step2]);
 	          pushHEX(0x00);
-	          pushHEX(rowsData[2][7-i]);
+	          pushHEX(rowsDATA[2][7-i]);
 	          LATCH();
 	          HAL_Delay(1);
 	        }
@@ -269,7 +269,7 @@ int main(void)
 	          pushHEX(0x00);
 	          pushHEX(0x00);
 	          pushHEX(colsSelect[7-step2+a]);
-	          pushHEX(rowsData[2][a]);
+	          pushHEX(rowsDATA[2][a]);
 	          LATCH();
 	          HAL_Delay(1);
 	        }
@@ -299,7 +299,7 @@ int main(void)
 	          pushHEX(colsSelect[6-i-step2]);
 	          pushHEX(0x00);
 	          pushHEX(0x00);
-	          pushHEX(rowsData[3][7-i]);
+	          pushHEX(rowsDATA[3][7-i]);
 	          LATCH();
 	          HAL_Delay(1);
 	        }
@@ -309,7 +309,7 @@ int main(void)
 	          pushHEX(0x00);
 	          pushHEX(colsSelect[7-step2+a]);
 	          pushHEX(0x00);
-	          pushHEX(rowsData[3][a]);
+	          pushHEX(rowsDATA[3][a]);
 	          LATCH();
 	          HAL_Delay(1);
 	        }
@@ -319,7 +319,7 @@ int main(void)
 	          pushHEX(0x00);
 	          pushHEX(colsSelect[6-i-step2]);
 	          pushHEX(0x00);
-	          pushHEX(rowsData[1][7-i]);
+	          pushHEX(rowsDATA[1][7-i]);
 	          LATCH();
 	          HAL_Delay(1);
 	        }
@@ -329,7 +329,7 @@ int main(void)
 	          pushHEX(0x00);
 	          pushHEX(0x00);
 	          pushHEX(colsSelect[7-step2+a]);
-	          pushHEX(rowsData[1][a]);
+	          pushHEX(rowsDATA[1][a]);
 	          LATCH();
 	          HAL_Delay(1);
 	        }
@@ -339,7 +339,7 @@ int main(void)
 	          pushHEX(0x00);
 	          pushHEX(0x00);
 	          pushHEX(colsSelect[6-i-step2]);
-	          pushHEX(rowsData[2][7-i]);
+	          pushHEX(rowsDATA[2][7-i]);
 	          LATCH();
 	          HAL_Delay(1);
 	        }
@@ -388,7 +388,7 @@ int main(void)
 	          pushHEX(0x00);
 	          pushHEX(colsSelect[6-i-step2]);
 	          pushHEX(0x00);
-	          pushHEX(rowsData[3][7-i]);
+	          pushHEX(rowsDATA[3][7-i]);
 	          LATCH();
 	          HAL_Delay(1);
 	        }
@@ -398,7 +398,7 @@ int main(void)
 	          pushHEX(0x00);
 	          pushHEX(0x00);
 	          pushHEX(colsSelect[7-step2+a]);
-	          pushHEX(rowsData[3][a]);
+	          pushHEX(rowsDATA[3][a]);
 	          LATCH();
 	          HAL_Delay(1);
 	        }
@@ -408,7 +408,7 @@ int main(void)
 	          pushHEX(0x00);
 	          pushHEX(0x00);
 	          pushHEX(colsSelect[6-i-step2]);
-	          pushHEX(rowsData[1][7-i]);
+	          pushHEX(rowsDATA[1][7-i]);
 	          LATCH();
 	          HAL_Delay(1);
 	        }
@@ -477,7 +477,7 @@ int main(void)
 	          pushHEX(0x00);
 	          pushHEX(0x00);
 	          pushHEX(colsSelect[6-i-step2]);
-	          pushHEX(rowsData[3][7-i]);
+	          pushHEX(rowsDATA[3][7-i]);
 	          LATCH();
 	          HAL_Delay(1);
 	        }

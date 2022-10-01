@@ -1,0 +1,9 @@
+Gắn gnd chung cho vdk and mạch 
+ngắt nguồn 12v 5v của module motor ra 
+sửa tên chân trên mạch ở module led đơn , led matrix clk latch 
+dời lcd vô thêm chỗ cắm module i2c 
+sửa module led 7 seg
+đặt trên port f411
+dồn chân cắm giaptiếp vdk gần vdk hơn 
+sửa chân button rộng ra
+nối đoạn đứt chân 9 với 14 74hc595 con 2 voi 3
