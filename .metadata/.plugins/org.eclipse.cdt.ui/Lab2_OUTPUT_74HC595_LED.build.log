@@ -1,4 +1,4 @@
-09:40:53 **** Incremental Build of configuration Debug for project Lab2_OUTPUT_74HC595_LED ****
+12:59:05 **** Incremental Build of configuration Debug for project Lab2_OUTPUT_74HC595_LED ****
 make -j8 all 
 arm-none-eabi-size   Lab2_OUTPUT_74HC595_LED.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   Lab2_OUTPUT_74HC595_LED.elf
 Finished building: default.size.stdout
  
 
-09:40:53 Build Finished. 0 errors, 0 warnings. (took 211ms)
+12:59:06 Build Finished. 0 errors, 0 warnings. (took 244ms)
 

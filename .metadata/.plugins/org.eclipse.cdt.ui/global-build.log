@@ -4804,3 +4804,551 @@ arm-none-eabi-size   TIMER_PWM_L298N.elf
    9544	     20	   1644	  11208	   2bc8	TIMER_PWM_L298N.elf
 Finished building: default.size.stdout
  
+07:57:38 **** Incremental Build of configuration Debug for project Lab1_GPIO_OUTPUT ****
+make -j8 all 
+arm-none-eabi-size   Lab1_GPIO_OUTPUT.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5800	     20	   1572	   7392	   1ce0	Lab1_GPIO_OUTPUT.elf
+Finished building: default.size.stdout
+ 
+07:57:39 **** Incremental Build of configuration Debug for project Lab2_OUTPUT_74HC595_LED ****
+make -j8 all 
+arm-none-eabi-size   Lab2_OUTPUT_74HC595_LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6172	     20	   1572	   7764	   1e54	Lab2_OUTPUT_74HC595_LED.elf
+Finished building: default.size.stdout
+ 
+07:57:40 **** Incremental Build of configuration Debug for project Lab3_GPIO_INPUT ****
+make -j8 all 
+arm-none-eabi-size   Lab3_GPIO_INPUT.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5976	     20	   1572	   7568	   1d90	Lab3_GPIO_INPUT.elf
+Finished building: default.size.stdout
+ 
+07:57:41 **** Incremental Build of configuration Debug for project Lab4_INPUT_EXTI ****
+make -j8 all 
+arm-none-eabi-size   Lab4_INPUT_EXTI.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6164	     24	   1568	   7756	   1e4c	Lab4_INPUT_EXTI.elf
+Finished building: default.size.stdout
+ 
+07:57:42 **** Incremental Build of configuration Debug for project Lab5_LCD ****
+make -j8 all 
+arm-none-eabi-size   Lab5_LCD.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6596	     20	   1572	   8188	   1ffc	Lab5_LCD.elf
+Finished building: default.size.stdout
+ 
+07:57:43 **** Incremental Build of configuration Debug for project Lab6_LED_MATRIX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Lab6_LED_MATRIX.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\STM32F411VET6_LuanVan_LapTrinh\STM32F411VET6\Lab6_LED_MATRIX\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab6_LED_MATRIX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab6_LED_MATRIX.elf
+ 
+arm-none-eabi-size   Lab6_LED_MATRIX.elf 
+arm-none-eabi-objdump -h -S  Lab6_LED_MATRIX.elf  > "Lab6_LED_MATRIX.list"
+   text	   data	    bss	    dec	    hex	filename
+   8472	    180	   1572	  10224	   27f0	Lab6_LED_MATRIX.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab6_LED_MATRIX.list
+ 
+07:57:48 **** Incremental Build of configuration Debug for project RFID_SPI ****
+make -j8 all 
+arm-none-eabi-size   RFID_SPI.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9116	     28	   1668	  10812	   2a3c	RFID_SPI.elf
+Finished building: default.size.stdout
+ 
+07:57:49 **** Incremental Build of configuration Debug for project TIMER_PWM_L298N ****
+make -j8 all 
+arm-none-eabi-size   TIMER_PWM_L298N.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9544	     20	   1644	  11208	   2bc8	TIMER_PWM_L298N.elf
+Finished building: default.size.stdout
+ 
+07:59:16 **** Incremental Build of configuration Debug for project Lab1_GPIO_OUTPUT ****
+make -j8 all 
+arm-none-eabi-size   Lab1_GPIO_OUTPUT.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5800	     20	   1572	   7392	   1ce0	Lab1_GPIO_OUTPUT.elf
+Finished building: default.size.stdout
+ 
+07:59:16 **** Incremental Build of configuration Debug for project Lab2_OUTPUT_74HC595_LED ****
+make -j8 all 
+arm-none-eabi-size   Lab2_OUTPUT_74HC595_LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6172	     20	   1572	   7764	   1e54	Lab2_OUTPUT_74HC595_LED.elf
+Finished building: default.size.stdout
+ 
+07:59:16 **** Incremental Build of configuration Debug for project Lab3_GPIO_INPUT ****
+make -j8 all 
+arm-none-eabi-size   Lab3_GPIO_INPUT.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5976	     20	   1572	   7568	   1d90	Lab3_GPIO_INPUT.elf
+Finished building: default.size.stdout
+ 
+07:59:17 **** Incremental Build of configuration Debug for project Lab4_INPUT_EXTI ****
+make -j8 all 
+arm-none-eabi-size   Lab4_INPUT_EXTI.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6164	     24	   1568	   7756	   1e4c	Lab4_INPUT_EXTI.elf
+Finished building: default.size.stdout
+ 
+07:59:17 **** Incremental Build of configuration Debug for project Lab5_LCD ****
+make -j8 all 
+arm-none-eabi-size   Lab5_LCD.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6596	     20	   1572	   8188	   1ffc	Lab5_LCD.elf
+Finished building: default.size.stdout
+ 
+07:59:17 **** Incremental Build of configuration Debug for project Lab6_LED_MATRIX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:149:21: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  149 |    lenghtOfString = strlen(charPrint);
+      |                     ^~~~~~
+../Core/Src/main.c:149:21: warning: incompatible implicit declaration of built-in function 'strlen'
+../Core/Src/main.c:21:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   20 | #include "main.h"
+  +++ |+#include <string.h>
+   21 | 
+arm-none-eabi-gcc -o "Lab6_LED_MATRIX.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\STM32F411VET6_LuanVan_LapTrinh\STM32F411VET6\Lab6_LED_MATRIX\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab6_LED_MATRIX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab6_LED_MATRIX.elf
+ 
+arm-none-eabi-size   Lab6_LED_MATRIX.elf 
+arm-none-eabi-objdump -h -S  Lab6_LED_MATRIX.elf  > "Lab6_LED_MATRIX.list"
+   text	   data	    bss	    dec	    hex	filename
+   8508	    188	   1572	  10268	   281c	Lab6_LED_MATRIX.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab6_LED_MATRIX.list
+ 
+07:59:18 **** Incremental Build of configuration Debug for project RFID_SPI ****
+make -j8 all 
+arm-none-eabi-size   RFID_SPI.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9116	     28	   1668	  10812	   2a3c	RFID_SPI.elf
+Finished building: default.size.stdout
+ 
+07:59:18 **** Incremental Build of configuration Debug for project TIMER_PWM_L298N ****
+make -j8 all 
+arm-none-eabi-size   TIMER_PWM_L298N.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9544	     20	   1644	  11208	   2bc8	TIMER_PWM_L298N.elf
+Finished building: default.size.stdout
+ 
+07:59:48 **** Incremental Build of configuration Debug for project Lab1_GPIO_OUTPUT ****
+make -j8 all 
+arm-none-eabi-size   Lab1_GPIO_OUTPUT.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5800	     20	   1572	   7392	   1ce0	Lab1_GPIO_OUTPUT.elf
+Finished building: default.size.stdout
+ 
+07:59:48 **** Incremental Build of configuration Debug for project Lab2_OUTPUT_74HC595_LED ****
+make -j8 all 
+arm-none-eabi-size   Lab2_OUTPUT_74HC595_LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6172	     20	   1572	   7764	   1e54	Lab2_OUTPUT_74HC595_LED.elf
+Finished building: default.size.stdout
+ 
+07:59:48 **** Incremental Build of configuration Debug for project Lab3_GPIO_INPUT ****
+make -j8 all 
+arm-none-eabi-size   Lab3_GPIO_INPUT.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5976	     20	   1572	   7568	   1d90	Lab3_GPIO_INPUT.elf
+Finished building: default.size.stdout
+ 
+07:59:48 **** Incremental Build of configuration Debug for project Lab4_INPUT_EXTI ****
+make -j8 all 
+arm-none-eabi-size   Lab4_INPUT_EXTI.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6164	     24	   1568	   7756	   1e4c	Lab4_INPUT_EXTI.elf
+Finished building: default.size.stdout
+ 
+07:59:49 **** Incremental Build of configuration Debug for project Lab5_LCD ****
+make -j8 all 
+arm-none-eabi-size   Lab5_LCD.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6596	     20	   1572	   8188	   1ffc	Lab5_LCD.elf
+Finished building: default.size.stdout
+ 
+07:59:49 **** Incremental Build of configuration Debug for project Lab6_LED_MATRIX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Lab6_LED_MATRIX.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\STM32F411VET6_LuanVan_LapTrinh\STM32F411VET6\Lab6_LED_MATRIX\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab6_LED_MATRIX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab6_LED_MATRIX.elf
+ 
+arm-none-eabi-size   Lab6_LED_MATRIX.elf 
+arm-none-eabi-objdump -h -S  Lab6_LED_MATRIX.elf  > "Lab6_LED_MATRIX.list"
+   text	   data	    bss	    dec	    hex	filename
+   8508	    188	   1572	  10268	   281c	Lab6_LED_MATRIX.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab6_LED_MATRIX.list
+ 
+07:59:50 **** Incremental Build of configuration Debug for project RFID_SPI ****
+make -j8 all 
+arm-none-eabi-size   RFID_SPI.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9116	     28	   1668	  10812	   2a3c	RFID_SPI.elf
+Finished building: default.size.stdout
+ 
+07:59:50 **** Incremental Build of configuration Debug for project TIMER_PWM_L298N ****
+make -j8 all 
+arm-none-eabi-size   TIMER_PWM_L298N.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9544	     20	   1644	  11208	   2bc8	TIMER_PWM_L298N.elf
+Finished building: default.size.stdout
+ 
+12:40:29 **** Incremental Build of configuration Debug for project Lab1_GPIO_OUTPUT ****
+make -j8 all 
+arm-none-eabi-size   Lab1_GPIO_OUTPUT.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5800	     20	   1572	   7392	   1ce0	Lab1_GPIO_OUTPUT.elf
+Finished building: default.size.stdout
+ 
+12:40:30 **** Incremental Build of configuration Debug for project Lab2_OUTPUT_74HC595_LED ****
+make -j8 all 
+arm-none-eabi-size   Lab2_OUTPUT_74HC595_LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6172	     20	   1572	   7764	   1e54	Lab2_OUTPUT_74HC595_LED.elf
+Finished building: default.size.stdout
+ 
+12:40:30 **** Incremental Build of configuration Debug for project Lab3_GPIO_INPUT ****
+make -j8 all 
+arm-none-eabi-size   Lab3_GPIO_INPUT.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5976	     20	   1572	   7568	   1d90	Lab3_GPIO_INPUT.elf
+Finished building: default.size.stdout
+ 
+12:40:31 **** Incremental Build of configuration Debug for project Lab4_INPUT_EXTI ****
+make -j8 all 
+arm-none-eabi-size   Lab4_INPUT_EXTI.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6164	     24	   1568	   7756	   1e4c	Lab4_INPUT_EXTI.elf
+Finished building: default.size.stdout
+ 
+12:40:31 **** Incremental Build of configuration Debug for project Lab5_LCD ****
+make -j8 all 
+arm-none-eabi-size   Lab5_LCD.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6596	     20	   1572	   8188	   1ffc	Lab5_LCD.elf
+Finished building: default.size.stdout
+ 
+12:40:31 **** Incremental Build of configuration Debug for project Lab6_LED_MATRIX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Lab6_LED_MATRIX.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\STM32F411VET6_LuanVan_LapTrinh\STM32F411VET6\Lab6_LED_MATRIX\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab6_LED_MATRIX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab6_LED_MATRIX.elf
+ 
+arm-none-eabi-size   Lab6_LED_MATRIX.elf 
+arm-none-eabi-objdump -h -S  Lab6_LED_MATRIX.elf  > "Lab6_LED_MATRIX.list"
+   text	   data	    bss	    dec	    hex	filename
+   5820	     28	   1572	   7420	   1cfc	Lab6_LED_MATRIX.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab6_LED_MATRIX.list
+ 
+12:40:35 **** Incremental Build of configuration Debug for project RFID_SPI ****
+make -j8 all 
+arm-none-eabi-size   RFID_SPI.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9116	     28	   1668	  10812	   2a3c	RFID_SPI.elf
+Finished building: default.size.stdout
+ 
+12:40:36 **** Incremental Build of configuration Debug for project TIMER_PWM_L298N ****
+make -j8 all 
+arm-none-eabi-size   TIMER_PWM_L298N.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9544	     20	   1644	  11208	   2bc8	TIMER_PWM_L298N.elf
+Finished building: default.size.stdout
+ 
+12:41:13 **** Incremental Build of configuration Debug for project Lab1_GPIO_OUTPUT ****
+make -j8 all 
+arm-none-eabi-size   Lab1_GPIO_OUTPUT.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5800	     20	   1572	   7392	   1ce0	Lab1_GPIO_OUTPUT.elf
+Finished building: default.size.stdout
+ 
+12:41:13 **** Incremental Build of configuration Debug for project Lab2_OUTPUT_74HC595_LED ****
+make -j8 all 
+arm-none-eabi-size   Lab2_OUTPUT_74HC595_LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6172	     20	   1572	   7764	   1e54	Lab2_OUTPUT_74HC595_LED.elf
+Finished building: default.size.stdout
+ 
+12:41:13 **** Incremental Build of configuration Debug for project Lab3_GPIO_INPUT ****
+make -j8 all 
+arm-none-eabi-size   Lab3_GPIO_INPUT.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5976	     20	   1572	   7568	   1d90	Lab3_GPIO_INPUT.elf
+Finished building: default.size.stdout
+ 
+12:41:14 **** Incremental Build of configuration Debug for project Lab4_INPUT_EXTI ****
+make -j8 all 
+arm-none-eabi-size   Lab4_INPUT_EXTI.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6164	     24	   1568	   7756	   1e4c	Lab4_INPUT_EXTI.elf
+Finished building: default.size.stdout
+ 
+12:41:14 **** Incremental Build of configuration Debug for project Lab5_LCD ****
+make -j8 all 
+arm-none-eabi-size   Lab5_LCD.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6596	     20	   1572	   8188	   1ffc	Lab5_LCD.elf
+Finished building: default.size.stdout
+ 
+12:41:14 **** Incremental Build of configuration Debug for project Lab6_LED_MATRIX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:180:3: error: unknown type name 'stand'
+  180 |   stand still in one place
+      |   ^~~~~
+../Core/Src/main.c:180:15: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'in'
+  180 |   stand still in one place
+      |               ^~
+../Core/Src/main.c:181:19: error: 'i' undeclared (first use in this function)
+  181 |   for (int i = 0; i <= 7; i++) {
+      |                   ^
+../Core/Src/main.c:181:19: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:181:30: error: expected ';' before ')' token
+  181 |   for (int i = 0; i <= 7; i++) {
+      |                              ^
+      |                              ;
+../Core/Src/main.c:181:30: error: expected statement before ')' token
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:41:14 **** Incremental Build of configuration Debug for project RFID_SPI ****
+make -j8 all 
+arm-none-eabi-size   RFID_SPI.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9116	     28	   1668	  10812	   2a3c	RFID_SPI.elf
+Finished building: default.size.stdout
+ 
+12:41:15 **** Incremental Build of configuration Debug for project TIMER_PWM_L298N ****
+make -j8 all 
+arm-none-eabi-size   TIMER_PWM_L298N.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9544	     20	   1644	  11208	   2bc8	TIMER_PWM_L298N.elf
+Finished building: default.size.stdout
+ 
+12:41:21 **** Incremental Build of configuration Debug for project Lab1_GPIO_OUTPUT ****
+make -j8 all 
+arm-none-eabi-size   Lab1_GPIO_OUTPUT.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5800	     20	   1572	   7392	   1ce0	Lab1_GPIO_OUTPUT.elf
+Finished building: default.size.stdout
+ 
+12:41:21 **** Incremental Build of configuration Debug for project Lab2_OUTPUT_74HC595_LED ****
+make -j8 all 
+arm-none-eabi-size   Lab2_OUTPUT_74HC595_LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6172	     20	   1572	   7764	   1e54	Lab2_OUTPUT_74HC595_LED.elf
+Finished building: default.size.stdout
+ 
+12:41:21 **** Incremental Build of configuration Debug for project Lab3_GPIO_INPUT ****
+make -j8 all 
+arm-none-eabi-size   Lab3_GPIO_INPUT.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5976	     20	   1572	   7568	   1d90	Lab3_GPIO_INPUT.elf
+Finished building: default.size.stdout
+ 
+12:41:21 **** Incremental Build of configuration Debug for project Lab4_INPUT_EXTI ****
+make -j8 all 
+arm-none-eabi-size   Lab4_INPUT_EXTI.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6164	     24	   1568	   7756	   1e4c	Lab4_INPUT_EXTI.elf
+Finished building: default.size.stdout
+ 
+12:41:22 **** Incremental Build of configuration Debug for project Lab5_LCD ****
+make -j8 all 
+arm-none-eabi-size   Lab5_LCD.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6596	     20	   1572	   8188	   1ffc	Lab5_LCD.elf
+Finished building: default.size.stdout
+ 
+12:41:22 **** Incremental Build of configuration Debug for project Lab6_LED_MATRIX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Lab6_LED_MATRIX.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\STM32F411VET6_LuanVan_LapTrinh\STM32F411VET6\Lab6_LED_MATRIX\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab6_LED_MATRIX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab6_LED_MATRIX.elf
+ 
+arm-none-eabi-size   Lab6_LED_MATRIX.elf 
+arm-none-eabi-objdump -h -S  Lab6_LED_MATRIX.elf  > "Lab6_LED_MATRIX.list"
+   text	   data	    bss	    dec	    hex	filename
+   6180	    924	   1572	   8676	   21e4	Lab6_LED_MATRIX.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab6_LED_MATRIX.list
+ 
+12:41:23 **** Incremental Build of configuration Debug for project RFID_SPI ****
+make -j8 all 
+arm-none-eabi-size   RFID_SPI.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9116	     28	   1668	  10812	   2a3c	RFID_SPI.elf
+Finished building: default.size.stdout
+ 
+12:41:23 **** Incremental Build of configuration Debug for project TIMER_PWM_L298N ****
+make -j8 all 
+arm-none-eabi-size   TIMER_PWM_L298N.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9544	     20	   1644	  11208	   2bc8	TIMER_PWM_L298N.elf
+Finished building: default.size.stdout
+ 
+12:41:52 **** Incremental Build of configuration Debug for project Lab6_LED_MATRIX ****
+make -j8 all 
+arm-none-eabi-size   Lab6_LED_MATRIX.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6180	    924	   1572	   8676	   21e4	Lab6_LED_MATRIX.elf
+Finished building: default.size.stdout
+ 
+12:42:41 **** Incremental Build of configuration Debug for project Lab6_LED_MATRIX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Lab6_LED_MATRIX.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\STM32F411VET6_LuanVan_LapTrinh\STM32F411VET6\Lab6_LED_MATRIX\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab6_LED_MATRIX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab6_LED_MATRIX.elf
+ 
+arm-none-eabi-size   Lab6_LED_MATRIX.elf 
+arm-none-eabi-objdump -h -S  Lab6_LED_MATRIX.elf  > "Lab6_LED_MATRIX.list"
+   text	   data	    bss	    dec	    hex	filename
+   6184	    924	   1572	   8680	   21e8	Lab6_LED_MATRIX.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab6_LED_MATRIX.list
+ 
+12:51:45 **** Incremental Build of configuration Debug for project Lab6_LED_MATRIX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Lab6_LED_MATRIX.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\STM32F411VET6_LuanVan_LapTrinh\STM32F411VET6\Lab6_LED_MATRIX\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab6_LED_MATRIX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab6_LED_MATRIX.elf
+ 
+arm-none-eabi-size   Lab6_LED_MATRIX.elf 
+arm-none-eabi-objdump -h -S  Lab6_LED_MATRIX.elf  > "Lab6_LED_MATRIX.list"
+   text	   data	    bss	    dec	    hex	filename
+   5820	     32	   1576	   7428	   1d04	Lab6_LED_MATRIX.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab6_LED_MATRIX.list
+ 
+12:56:02 **** Incremental Build of configuration Debug for project Lab1_GPIO_OUTPUT ****
+make -j8 all 
+arm-none-eabi-size   Lab1_GPIO_OUTPUT.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5800	     20	   1572	   7392	   1ce0	Lab1_GPIO_OUTPUT.elf
+Finished building: default.size.stdout
+ 
+12:56:02 **** Incremental Build of configuration Debug for project Lab2_OUTPUT_74HC595_LED ****
+make -j8 all 
+arm-none-eabi-size   Lab2_OUTPUT_74HC595_LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6172	     20	   1572	   7764	   1e54	Lab2_OUTPUT_74HC595_LED.elf
+Finished building: default.size.stdout
+ 
+12:56:02 **** Incremental Build of configuration Debug for project Lab3_GPIO_INPUT ****
+make -j8 all 
+arm-none-eabi-size   Lab3_GPIO_INPUT.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5976	     20	   1572	   7568	   1d90	Lab3_GPIO_INPUT.elf
+Finished building: default.size.stdout
+ 
+12:56:02 **** Incremental Build of configuration Debug for project Lab4_INPUT_EXTI ****
+make -j8 all 
+arm-none-eabi-size   Lab4_INPUT_EXTI.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6164	     24	   1568	   7756	   1e4c	Lab4_INPUT_EXTI.elf
+Finished building: default.size.stdout
+ 
+12:56:03 **** Incremental Build of configuration Debug for project Lab5_LCD ****
+make -j8 all 
+arm-none-eabi-size   Lab5_LCD.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6596	     20	   1572	   8188	   1ffc	Lab5_LCD.elf
+Finished building: default.size.stdout
+ 
+12:56:03 **** Incremental Build of configuration Debug for project Lab6_LED_MATRIX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Lab6_LED_MATRIX.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\STM32F411VET6_LuanVan_LapTrinh\STM32F411VET6\Lab6_LED_MATRIX\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab6_LED_MATRIX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab6_LED_MATRIX.elf
+ 
+arm-none-eabi-size   Lab6_LED_MATRIX.elf 
+arm-none-eabi-objdump -h -S  Lab6_LED_MATRIX.elf  > "Lab6_LED_MATRIX.list"
+   text	   data	    bss	    dec	    hex	filename
+   5892	     32	   1576	   7500	   1d4c	Lab6_LED_MATRIX.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab6_LED_MATRIX.list
+ 
+12:56:03 **** Incremental Build of configuration Debug for project RFID_SPI ****
+make -j8 all 
+arm-none-eabi-size   RFID_SPI.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9116	     28	   1668	  10812	   2a3c	RFID_SPI.elf
+Finished building: default.size.stdout
+ 
+12:56:04 **** Incremental Build of configuration Debug for project TIMER_PWM_L298N ****
+make -j8 all 
+arm-none-eabi-size   TIMER_PWM_L298N.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9544	     20	   1644	  11208	   2bc8	TIMER_PWM_L298N.elf
+Finished building: default.size.stdout
+ 
+12:59:05 **** Incremental Build of configuration Debug for project Lab1_GPIO_OUTPUT ****
+make -j8 all 
+arm-none-eabi-size   Lab1_GPIO_OUTPUT.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5800	     20	   1572	   7392	   1ce0	Lab1_GPIO_OUTPUT.elf
+Finished building: default.size.stdout
+ 
+12:59:05 **** Incremental Build of configuration Debug for project Lab2_OUTPUT_74HC595_LED ****
+make -j8 all 
+arm-none-eabi-size   Lab2_OUTPUT_74HC595_LED.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6172	     20	   1572	   7764	   1e54	Lab2_OUTPUT_74HC595_LED.elf
+Finished building: default.size.stdout
+ 
+12:59:06 **** Incremental Build of configuration Debug for project Lab3_GPIO_INPUT ****
+make -j8 all 
+arm-none-eabi-size   Lab3_GPIO_INPUT.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5976	     20	   1572	   7568	   1d90	Lab3_GPIO_INPUT.elf
+Finished building: default.size.stdout
+ 
+12:59:06 **** Incremental Build of configuration Debug for project Lab4_INPUT_EXTI ****
+make -j8 all 
+arm-none-eabi-size   Lab4_INPUT_EXTI.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6164	     24	   1568	   7756	   1e4c	Lab4_INPUT_EXTI.elf
+Finished building: default.size.stdout
+ 
+12:59:06 **** Incremental Build of configuration Debug for project Lab5_LCD ****
+make -j8 all 
+arm-none-eabi-size   Lab5_LCD.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6596	     20	   1572	   8188	   1ffc	Lab5_LCD.elf
+Finished building: default.size.stdout
+ 
+12:59:07 **** Incremental Build of configuration Debug for project Lab6_LED_MATRIX ****
+make -j8 all 
+arm-none-eabi-size   Lab6_LED_MATRIX.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5892	     32	   1576	   7500	   1d4c	Lab6_LED_MATRIX.elf
+Finished building: default.size.stdout
+ 
+12:59:07 **** Incremental Build of configuration Debug for project RFID_SPI ****
+make -j8 all 
+arm-none-eabi-size   RFID_SPI.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9116	     28	   1668	  10812	   2a3c	RFID_SPI.elf
+Finished building: default.size.stdout
+ 
+12:59:07 **** Incremental Build of configuration Debug for project TIMER_PWM_L298N ****
+make -j8 all 
+arm-none-eabi-size   TIMER_PWM_L298N.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9544	     20	   1644	  11208	   2bc8	TIMER_PWM_L298N.elf
+Finished building: default.size.stdout
+ 

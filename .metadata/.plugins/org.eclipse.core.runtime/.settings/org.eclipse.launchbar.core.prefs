@@ -7,4 +7,5 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Lab1_GPIO_OUTPUT\ Debug/activeL
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Lab1_GPIO_OUTPUT\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Lab4_INPUT_EXTI\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Lab5_LCD\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Lab6_LED_MATRIX\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:RFID_SPI\ Debug/activeLaunchMode=run

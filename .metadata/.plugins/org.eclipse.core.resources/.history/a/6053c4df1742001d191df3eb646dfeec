@@ -146,8 +146,6 @@ void pushHEX(int hexValue)
 
 void shiftDataLedMatrix(int hexOutLine,int hexLeft,int hexMid,int hexRight)
 {
-	if(hexOutLine<0)
-	{}
 
 }
 /* USER CODE END 0 */
