@@ -7,23 +7,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         000017f0  08000198  08000198  00010198  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       0000001c  08001988  08001988  00011988  2**2
+  2 .rodata       00000030  08001988  08001988  00011988  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  080019a4  080019a4  0002000c  2**0
+  3 .ARM.extab    00000000  080019b8  080019b8  0002000c  2**0
                   CONTENTS
-  4 .ARM          00000008  080019a4  080019a4  000119a4  2**2
+  4 .ARM          00000008  080019b8  080019b8  000119b8  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 .preinit_array 00000000  080019ac  080019ac  0002000c  2**0
+  5 .preinit_array 00000000  080019c0  080019c0  0002000c  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  080019ac  080019ac  000119ac  2**2
+  6 .init_array   00000004  080019c0  080019c0  000119c0  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  7 .fini_array   00000004  080019b0  080019b0  000119b0  2**2
+  7 .fini_array   00000004  080019c4  080019c4  000119c4  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  8 .data         0000000c  20000000  080019b4  00020000  2**2
+  8 .data         0000000c  20000000  080019c8  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          00000020  2000000c  080019c0  0002000c  2**2
+  9 .bss          00000020  2000000c  080019d4  0002000c  2**2
                   ALLOC
- 10 ._user_heap_stack 00000604  2000002c  080019c0  0002002c  2**0
+ 10 ._user_heap_stack 00000604  2000002c  080019d4  0002002c  2**0
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  0002000c  2**0
                   CONTENTS, READONLY
@@ -791,21 +791,21 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  lcd_puts(0, 0, (int8_t*)"Long");
+	  lcd_puts(0, 0, (int8_t*)"TRUONG BACH KHOA");
  8000794:	4a05      	ldr	r2, [pc, #20]	; (80007ac <main+0x2c>)
  8000796:	2100      	movs	r1, #0
  8000798:	2000      	movs	r0, #0
  800079a:	f7ff ffa5 	bl	80006e8 <lcd_puts>
-	  lcd_puts(1, 0, (int8_t*)"Len");
+	  lcd_puts(1, 3, (int8_t*)"CTU - DHCT");
  800079e:	4a04      	ldr	r2, [pc, #16]	; (80007b0 <main+0x30>)
- 80007a0:	2100      	movs	r1, #0
+ 80007a0:	2103      	movs	r1, #3
  80007a2:	2001      	movs	r0, #1
  80007a4:	f7ff ffa0 	bl	80006e8 <lcd_puts>
-	  lcd_puts(0, 0, (int8_t*)"Long");
+	  lcd_puts(0, 0, (int8_t*)"TRUONG BACH KHOA");
  80007a8:	e7f4      	b.n	8000794 <main+0x14>
  80007aa:	bf00      	nop
  80007ac:	08001988 	.word	0x08001988
- 80007b0:	08001990 	.word	0x08001990
+ 80007b0:	0800199c 	.word	0x0800199c
 
 080007b4 <SystemClock_Config>:
 /**
@@ -1426,7 +1426,7 @@ LoopFillZerobss:
   ldr r1, =_edata
  8000a88:	2000000c 	.word	0x2000000c
   ldr r2, =_sidata
- 8000a8c:	080019b4 	.word	0x080019b4
+ 8000a8c:	080019c8 	.word	0x080019c8
   ldr r2, =_sbss
  8000a90:	2000000c 	.word	0x2000000c
   ldr r4, =_ebss
@@ -3749,7 +3749,7 @@ HAL_StatusTypeDef HAL_RCC_ClockConfig(RCC_ClkInitTypeDef  *RCC_ClkInitStruct, ui
  8001776:	bf00      	nop
  8001778:	40023c00 	.word	0x40023c00
  800177c:	40023800 	.word	0x40023800
- 8001780:	08001994 	.word	0x08001994
+ 8001780:	080019a8 	.word	0x080019a8
  8001784:	20000000 	.word	0x20000000
  8001788:	20000004 	.word	0x20000004
 
@@ -3986,10 +3986,10 @@ __weak uint32_t HAL_RCC_GetSysClockFreq(void)
  800194a:	4798      	blx	r3
  800194c:	3601      	adds	r6, #1
  800194e:	e7f2      	b.n	8001936 <__libc_init_array+0x1e>
- 8001950:	080019ac 	.word	0x080019ac
- 8001954:	080019ac 	.word	0x080019ac
- 8001958:	080019ac 	.word	0x080019ac
- 800195c:	080019b0 	.word	0x080019b0
+ 8001950:	080019c0 	.word	0x080019c0
+ 8001954:	080019c0 	.word	0x080019c0
+ 8001958:	080019c0 	.word	0x080019c0
+ 800195c:	080019c4 	.word	0x080019c4
 
 08001960 <memset>:
  8001960:	4402      	add	r2, r0

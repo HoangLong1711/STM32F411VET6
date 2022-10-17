@@ -92,8 +92,8 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  lcd_puts(0, 0, (int8_t*)"Long");
-	  lcd_puts(1, 0, (int8_t*)"Len");
+	  lcd_puts(0, 0, (int8_t*)"TRUONG BACH KHOA");
+	  lcd_puts(1, 3, (int8_t*)"CTU - DHCT");
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
