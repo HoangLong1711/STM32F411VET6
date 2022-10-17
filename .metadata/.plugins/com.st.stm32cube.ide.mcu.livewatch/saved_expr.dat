@@ -1,2 +1,4 @@
-valueADC
-temp
+tempBuffer
+humiBuffer
+pMillis
+cMillis

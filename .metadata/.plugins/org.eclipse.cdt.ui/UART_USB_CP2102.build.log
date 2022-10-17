@@ -1,4 +1,4 @@
-16:16:56 **** Incremental Build of configuration Debug for project UART_USB_CP2102 ****
+21:51:30 **** Incremental Build of configuration Debug for project UART_USB_CP2102 ****
 make -j8 all 
 arm-none-eabi-size   UART_USB_CP2102.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   UART_USB_CP2102.elf
 Finished building: default.size.stdout
  
 
-16:16:56 Build Finished. 0 errors, 0 warnings. (took 145ms)
+21:51:30 Build Finished. 0 errors, 0 warnings. (took 161ms)
 
