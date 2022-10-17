@@ -2499,7 +2499,7 @@ LOAD c:/st/stm32cubeide_1.9.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000008001b1c                . = ALIGN (0x4)
                 0x0000000008001b1c                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000000      0x4f0 load address 0x0000000008001b1c
+.data           0x0000000020000000      0x510 load address 0x0000000008001b1c
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
  *(.data)
@@ -2511,51 +2511,51 @@ LOAD c:/st/stm32cubeide_1.9.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x00000000200004a0       0x20 ./Core/Src/main.o
                 0x00000000200004a0                colsSelect
  .data.charPrint
-                0x00000000200004c0       0x21 ./Core/Src/main.o
+                0x00000000200004c0       0x43 ./Core/Src/main.o
                 0x00000000200004c0                charPrint
- *fill*         0x00000000200004e1        0x3 
+ *fill*         0x0000000020000503        0x1 
  .data.SystemCoreClock
-                0x00000000200004e4        0x4 ./Core/Src/system_stm32f4xx.o
-                0x00000000200004e4                SystemCoreClock
+                0x0000000020000504        0x4 ./Core/Src/system_stm32f4xx.o
+                0x0000000020000504                SystemCoreClock
  .data.uwTickPrio
-                0x00000000200004e8        0x4 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
-                0x00000000200004e8                uwTickPrio
+                0x0000000020000508        0x4 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+                0x0000000020000508                uwTickPrio
  .data.uwTickFreq
-                0x00000000200004ec        0x1 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
-                0x00000000200004ec                uwTickFreq
+                0x000000002000050c        0x1 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+                0x000000002000050c                uwTickFreq
  *(.RamFunc)
  *(.RamFunc*)
-                0x00000000200004f0                . = ALIGN (0x4)
- *fill*         0x00000000200004ed        0x3 
-                0x00000000200004f0                _edata = .
-
-.igot.plt       0x00000000200004f0        0x0 load address 0x000000000800200c
- .igot.plt      0x00000000200004f0        0x0 c:/st/stm32cubeide_1.9.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x00000000200004f0                . = ALIGN (0x4)
-
-.bss            0x00000000200004f0       0x20 load address 0x000000000800200c
-                0x00000000200004f0                _sbss = .
-                0x00000000200004f0                __bss_start__ = _sbss
- *(.bss)
- .bss           0x00000000200004f0       0x1c c:/st/stm32cubeide_1.9.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
- *(.bss*)
- .bss.uwTick    0x000000002000050c        0x4 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
-                0x000000002000050c                uwTick
- *(COMMON)
                 0x0000000020000510                . = ALIGN (0x4)
-                0x0000000020000510                _ebss = .
-                0x0000000020000510                __bss_end__ = _ebss
+ *fill*         0x000000002000050d        0x3 
+                0x0000000020000510                _edata = .
+
+.igot.plt       0x0000000020000510        0x0 load address 0x000000000800202c
+ .igot.plt      0x0000000020000510        0x0 c:/st/stm32cubeide_1.9.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x0000000020000510                . = ALIGN (0x4)
+
+.bss            0x0000000020000510       0x20 load address 0x000000000800202c
+                0x0000000020000510                _sbss = .
+                0x0000000020000510                __bss_start__ = _sbss
+ *(.bss)
+ .bss           0x0000000020000510       0x1c c:/st/stm32cubeide_1.9.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.0.202111181127/tools/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ *(.bss*)
+ .bss.uwTick    0x000000002000052c        0x4 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+                0x000000002000052c                uwTick
+ *(COMMON)
+                0x0000000020000530                . = ALIGN (0x4)
+                0x0000000020000530                _ebss = .
+                0x0000000020000530                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x0000000020000510      0x600 load address 0x000000000800200c
-                0x0000000020000510                . = ALIGN (0x8)
+                0x0000000020000530      0x600 load address 0x000000000800202c
+                0x0000000020000530                . = ALIGN (0x8)
                 [!provide]                        PROVIDE (end = .)
-                0x0000000020000510                PROVIDE (_end = .)
-                0x0000000020000710                . = (. + _Min_Heap_Size)
- *fill*         0x0000000020000510      0x200 
-                0x0000000020000b10                . = (. + _Min_Stack_Size)
- *fill*         0x0000000020000710      0x400 
-                0x0000000020000b10                . = ALIGN (0x8)
+                0x0000000020000530                PROVIDE (_end = .)
+                0x0000000020000730                . = (. + _Min_Heap_Size)
+ *fill*         0x0000000020000530      0x200 
+                0x0000000020000b30                . = (. + _Min_Stack_Size)
+ *fill*         0x0000000020000730      0x400 
+                0x0000000020000b30                . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)

@@ -1,11 +1,13 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Lab1_GPIO_OUTPUT Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Lab2_OUTPUT_74HC595_LED Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Lab3_GPIO_INPUT Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Lab4_INPUT_EXTI Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:RFID_SPI Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TIMER_PWM_L298N Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Lab6_LED_MATRIX Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Lab5_LCD Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Lab7_KeyPad_4x4 Debug
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Lab3_GPIO_INPUT Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Lab4_INPUT_EXTI Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Lab5_LCD Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Lab1_GPIO_OUTPUT Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Lab6_LED_MATRIX Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Lab2_OUTPUT_74HC595_LED Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Lab7_KeyPad_4x4 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:I2C_EEPROM_AT24C256 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:UART_USB_CP2102 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TIMER_PWM_L298N Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:RFID_SPI Debug
 eclipse.preferences.version=1
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:I2C_EEPROM_AT24C256\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Lab1_GPIO_OUTPUT\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Lab1_GPIO_OUTPUT\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Lab4_INPUT_EXTI\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Lab5_LCD\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Lab6_LED_MATRIX\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:RFID_SPI\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:UART_USB_CP2102\ Debug/activeLaunchMode=run

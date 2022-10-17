@@ -1,10 +1,10 @@
-16:08:19 **** Incremental Build of configuration Debug for project Lab7_KeyPad_4x4 ****
+11:37:18 **** Incremental Build of configuration Debug for project Lab7_KeyPad_4x4 ****
 make -j8 all 
 arm-none-eabi-size   Lab7_KeyPad_4x4.elf 
    text	   data	    bss	    dec	    hex	filename
-   9096	     20	   1668	  10784	   2a20	Lab7_KeyPad_4x4.elf
+   9108	     20	   1668	  10796	   2a2c	Lab7_KeyPad_4x4.elf
 Finished building: default.size.stdout
  
 
-16:08:19 Build Finished. 0 errors, 0 warnings. (took 157ms)
+11:37:19 Build Finished. 0 errors, 0 warnings. (took 151ms)
 

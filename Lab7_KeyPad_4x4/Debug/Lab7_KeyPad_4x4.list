@@ -7,23 +7,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         000021d0  08000198  08000198  00010198  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       00000018  08002368  08002368  00012368  2**2
+  2 .rodata       00000024  08002368  08002368  00012368  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  08002380  08002380  0002000c  2**0
+  3 .ARM.extab    00000000  0800238c  0800238c  0002000c  2**0
                   CONTENTS
-  4 .ARM          00000008  08002380  08002380  00012380  2**2
+  4 .ARM          00000008  0800238c  0800238c  0001238c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 .preinit_array 00000000  08002388  08002388  0002000c  2**0
+  5 .preinit_array 00000000  08002394  08002394  0002000c  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  08002388  08002388  00012388  2**2
+  6 .init_array   00000004  08002394  08002394  00012394  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  7 .fini_array   00000004  0800238c  0800238c  0001238c  2**2
+  7 .fini_array   00000004  08002398  08002398  00012398  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  8 .data         0000000c  20000000  08002390  00020000  2**2
+  8 .data         0000000c  20000000  0800239c  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          00000080  2000000c  0800239c  0002000c  2**2
+  9 .bss          00000080  2000000c  080023a8  0002000c  2**2
                   ALLOC
- 10 ._user_heap_stack 00000604  2000008c  0800239c  0002008c  2**0
+ 10 ._user_heap_stack 00000604  2000008c  080023a8  0002008c  2**0
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  0002000c  2**0
                   CONTENTS, READONLY
@@ -1275,18 +1275,18 @@ lcd_clear();
  8000aaa:	4a0a      	ldr	r2, [pc, #40]	; (8000ad4 <main+0x70>)
  8000aac:	6013      	str	r3, [r2, #0]
 		}
-	  //lcd_puts(0, 1, (int8_t*)"a");
-	  lcd_puts(0, 1, stringArray);
+//	  lcd_puts(0, 1, (int8_t*)"a");
+	  lcd_puts(0, 0, stringArray);
  8000aae:	4a0a      	ldr	r2, [pc, #40]	; (8000ad8 <main+0x74>)
- 8000ab0:	2101      	movs	r1, #1
+ 8000ab0:	2100      	movs	r1, #0
  8000ab2:	2000      	movs	r0, #0
  8000ab4:	f7ff fe18 	bl	80006e8 <lcd_puts>
 	  HAL_Delay(10);
  8000ab8:	200a      	movs	r0, #10
  8000aba:	f000 fa9b 	bl	8000ff4 <HAL_Delay>
-	  lcd_puts(1, 1, (int8_t*)"Long");
+	  lcd_puts(1, 0, (int8_t*)"TRUONG BACH KHOA");
  8000abe:	4a07      	ldr	r2, [pc, #28]	; (8000adc <main+0x78>)
- 8000ac0:	2101      	movs	r1, #1
+ 8000ac0:	2100      	movs	r1, #0
  8000ac2:	2001      	movs	r0, #1
  8000ac4:	f7ff fe10 	bl	80006e8 <lcd_puts>
 	  HAL_Delay(10);
@@ -1695,8 +1695,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
  8000d4c:	2300      	movs	r3, #0
  8000d4e:	61fb      	str	r3, [r7, #28]
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
- 8000d50:	2300      	movs	r3, #0
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+ 8000d50:	2302      	movs	r3, #2
  8000d52:	623b      	str	r3, [r7, #32]
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
  8000d54:	f107 0314 	add.w	r3, r7, #20
@@ -2145,7 +2145,7 @@ LoopFillZerobss:
   ldr r1, =_edata
  8000efc:	2000000c 	.word	0x2000000c
   ldr r2, =_sidata
- 8000f00:	08002390 	.word	0x08002390
+ 8000f00:	0800239c 	.word	0x0800239c
   ldr r2, =_sbss
  8000f04:	2000000c 	.word	0x2000000c
   ldr r4, =_ebss
@@ -4514,7 +4514,7 @@ HAL_StatusTypeDef HAL_RCC_ClockConfig(RCC_ClkInitTypeDef  *RCC_ClkInitStruct, ui
  8001c1a:	bf00      	nop
  8001c1c:	40023c00 	.word	0x40023c00
  8001c20:	40023800 	.word	0x40023800
- 8001c24:	08002370 	.word	0x08002370
+ 8001c24:	0800237c 	.word	0x0800237c
  8001c28:	20000000 	.word	0x20000000
  8001c2c:	20000004 	.word	0x20000004
 
@@ -5687,10 +5687,10 @@ HAL_StatusTypeDef HAL_TIMEx_MasterConfigSynchronization(TIM_HandleTypeDef *htim,
  800232a:	4798      	blx	r3
  800232c:	3601      	adds	r6, #1
  800232e:	e7f2      	b.n	8002316 <__libc_init_array+0x1e>
- 8002330:	08002388 	.word	0x08002388
- 8002334:	08002388 	.word	0x08002388
- 8002338:	08002388 	.word	0x08002388
- 800233c:	0800238c 	.word	0x0800238c
+ 8002330:	08002394 	.word	0x08002394
+ 8002334:	08002394 	.word	0x08002394
+ 8002338:	08002394 	.word	0x08002394
+ 800233c:	08002398 	.word	0x08002398
 
 08002340 <memset>:
  8002340:	4402      	add	r2, r0
