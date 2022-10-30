@@ -61,6 +61,7 @@ static void MX_GPIO_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
 int seg[10] = { 0x03, 0x9f, 0x25, 0x0D, 0x99, 0x49, 0x41, 0x1F, 0x01, 0x09 };
 int seg_Dec[10] = { 0x02, 0x9E, 0x24, 0x0C, 0x98, 0x48, 0x40, 0x1E, 0x00, 0x08 };
 int pos[8] = { 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80 };
@@ -114,6 +115,7 @@ void shiftoutLed7Seg(int dataSeg, int position, int isDec) {
 		LATCH();
 	}
 }
+
 /* USER CODE END 0 */
 
 /**
@@ -154,46 +156,14 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
-//		if (HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_8) == GPIO_PIN_RESET) {
-//			HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
-//			if (mode == 1) {
-//				mode = 2;
-//			} else {
-//				mode = 1;
-//			}
-//			HAL_Delay(100);
-//			uint32_t startTime = HAL_GetTick();
-//			while (HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_8) == GPIO_PIN_RESET) {
-//				if (HAL_GetTick() - startTime > 3000) {
-//					break;
-//				}
-//			}
-//		}
-//		HAL_Delay(100);
-//		if (mode == 1 ) {
-//			pushHEX(0x5A);
-//			LATCH();
-//
-//		} else if (mode == 2 ) {
-//			pushHEX(0xA5);
-//			LATCH();
-//		}
-//		HAL_Delay(500);
-	  pushHEX(0xAA);
-	  LATCH();
-	  HAL_Delay(1000);
-	  pushHEX(0x55);
-	  LATCH();
-	  HAL_Delay(1000);
-//		shiftoutLed7Seg(2, 1, 0);
-//		shiftoutLed7Seg(7, 2, 0);
-//		shiftoutLed7Seg(1, 3, 0);
-//		shiftoutLed7Seg(0, 4, 0);
-//		shiftoutLed7Seg(2, 5, 0);
-//		shiftoutLed7Seg(0, 6, 0);
-//		shiftoutLed7Seg(0, 7, 0);
-//		shiftoutLed7Seg(0, 8, 0);
+		shiftoutLed7Seg(2, 1, 0);
+		shiftoutLed7Seg(7, 2, 0);
+		shiftoutLed7Seg(1, 3, 0);
+		shiftoutLed7Seg(0, 4, 0);
+		shiftoutLed7Seg(2, 5, 0);
+		shiftoutLed7Seg(0, 6, 0);
+		shiftoutLed7Seg(0, 7, 0);
+		shiftoutLed7Seg(0, 8, 0);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

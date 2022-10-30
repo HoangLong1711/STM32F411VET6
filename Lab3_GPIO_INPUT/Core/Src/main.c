@@ -92,16 +92,14 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  		if (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_9) == GPIO_PIN_RESET) {
-	  			HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
-	  			HAL_Delay(100);
-	  			uint32_t startTime = HAL_GetTick();
-	  			while (HAL_GPIO_ReadPin(GPIOC, GPIO_PIN_9) == GPIO_PIN_RESET) {
-	  				if (HAL_GetTick() - startTime > 3000) {
-	  					break;
-	  				}
-	  			}
-	  		}
+		if (HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_14) == GPIO_PIN_RESET) {
+			HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
+			HAL_Delay(100);
+			while (HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_14) == GPIO_PIN_RESET) {
+			}
+			HAL_Delay(100);
+		}
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -166,6 +164,12 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin : PD14 */
+  GPIO_InitStruct.Pin = GPIO_PIN_14;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PD15 */
   GPIO_InitStruct.Pin = GPIO_PIN_15;

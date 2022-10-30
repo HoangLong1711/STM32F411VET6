@@ -1,10 +1,10 @@
-21:51:29 **** Incremental Build of configuration Debug for project Lab4_INPUT_EXTI ****
+13:23:23 **** Incremental Build of configuration Debug for project Lab4_INPUT_EXTI ****
 make -j8 all 
 arm-none-eabi-size   Lab4_INPUT_EXTI.elf 
    text	   data	    bss	    dec	    hex	filename
-   6164	     24	   1568	   7756	   1e4c	Lab4_INPUT_EXTI.elf
+   6100	     24	   1568	   7692	   1e0c	Lab4_INPUT_EXTI.elf
 Finished building: default.size.stdout
  
 
-21:51:29 Build Finished. 0 errors, 0 warnings. (took 157ms)
+13:23:23 Build Finished. 0 errors, 0 warnings. (took 217ms)
 

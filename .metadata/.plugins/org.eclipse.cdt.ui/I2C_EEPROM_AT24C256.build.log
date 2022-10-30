@@ -1,4 +1,4 @@
-21:51:28 **** Incremental Build of configuration Debug for project I2C_EEPROM_AT24C256 ****
+13:23:22 **** Incremental Build of configuration Debug for project I2C_EEPROM_AT24C256 ****
 make -j8 all 
 arm-none-eabi-size   I2C_EEPROM_AT24C256.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   I2C_EEPROM_AT24C256.elf
 Finished building: default.size.stdout
  
 
-21:51:28 Build Finished. 0 errors, 0 warnings. (took 158ms)
+13:23:22 Build Finished. 0 errors, 0 warnings. (took 168ms)
 

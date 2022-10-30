@@ -8,6 +8,7 @@
 		<item key="isRegEx" value="false"/>
 		<item key="selection" value="rowsData"/>
 		<list key="findhistory">
+			<item value="&#x09;  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);"/>
 			<item value="rowsDATA"/>
 			<item value="dataRow"/>
 			<item value="selectColumn"/>
