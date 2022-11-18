@@ -3,8 +3,8 @@
 
 // SPI CS define
 //#define SPI_I2S_FLAG_BSY	((uint16_t)0x0080)
-#define cs_reset() 					HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, 0)
-#define cs_set() 						HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, 1)
+#define cs_reset() 					HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 0)
+#define cs_set() 						HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, 1)
 
 // Status enumeration, Used with most functions
 #define MI_OK													0

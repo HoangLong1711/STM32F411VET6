@@ -1,10 +1,10 @@
-13:23:22 **** Incremental Build of configuration Debug for project Lab1_GPIO_OUTPUT ****
+15:46:37 **** Incremental Build of configuration Debug for project Lab1_GPIO_OUTPUT ****
 make -j8 all 
 arm-none-eabi-size   Lab1_GPIO_OUTPUT.elf 
    text	   data	    bss	    dec	    hex	filename
-   5776	     20	   1572	   7368	   1cc8	Lab1_GPIO_OUTPUT.elf
+   5960	     20	   1572	   7552	   1d80	Lab1_GPIO_OUTPUT.elf
 Finished building: default.size.stdout
  
 
-13:23:22 Build Finished. 0 errors, 0 warnings. (took 222ms)
+15:46:37 Build Finished. 0 errors, 0 warnings. (took 157ms)
 

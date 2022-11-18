@@ -37,13 +37,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  00016c22  00000000  00000000  0002c3f8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000b055  00000000  00000000  0004301a  2**0
+ 17 .debug_line   0000b04b  00000000  00000000  0004301a  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    0008cef3  00000000  00000000  0004e06f  2**0
+ 18 .debug_str    0008cef3  00000000  00000000  0004e065  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000050  00000000  00000000  000daf62  2**0
+ 19 .comment      00000050  00000000  00000000  000daf58  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  000040a0  00000000  00000000  000dafb4  2**2
+ 20 .debug_frame  000040a0  00000000  00000000  000dafa8  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -1725,23 +1725,23 @@ void lcd_puts(uint8_t x, uint8_t y, int8_t *string)
  80012aa:	bd80      	pop	{r7, pc}
 
 080012ac <delay>:
+
 float Temperature = 0;
 float Humidity = 0;
 uint8_t Presence = 0;
 
-void delay (uint16_t delay)
-{
+void delay(uint16_t delay) {
  80012ac:	b480      	push	{r7}
  80012ae:	b083      	sub	sp, #12
  80012b0:	af00      	add	r7, sp, #0
  80012b2:	4603      	mov	r3, r0
  80012b4:	80fb      	strh	r3, [r7, #6]
-  __HAL_TIM_SET_COUNTER(&htim2, 0);
+	__HAL_TIM_SET_COUNTER(&htim2, 0);
  80012b6:	4b09      	ldr	r3, [pc, #36]	; (80012dc <delay+0x30>)
  80012b8:	681b      	ldr	r3, [r3, #0]
  80012ba:	2200      	movs	r2, #0
  80012bc:	625a      	str	r2, [r3, #36]	; 0x24
-  while (__HAL_TIM_GET_COUNTER(&htim2) < delay);
+	while (__HAL_TIM_GET_COUNTER(&htim2) < delay)
  80012be:	bf00      	nop
  80012c0:	4b06      	ldr	r3, [pc, #24]	; (80012dc <delay+0x30>)
  80012c2:	681b      	ldr	r3, [r3, #0]
@@ -1749,6 +1749,7 @@ void delay (uint16_t delay)
  80012c6:	88fb      	ldrh	r3, [r7, #6]
  80012c8:	429a      	cmp	r2, r3
  80012ca:	d3f9      	bcc.n	80012c0 <delay+0x14>
+		;
 }
  80012cc:	bf00      	nop
  80012ce:	bf00      	nop
@@ -1760,8 +1761,7 @@ void delay (uint16_t delay)
  80012dc:	200001fc 	.word	0x200001fc
 
 080012e0 <Set_Pin_Output>:
-void Set_Pin_Output (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)
-{
+void Set_Pin_Output(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin) {
  80012e0:	b580      	push	{r7, lr}
  80012e2:	b08c      	sub	sp, #48	; 0x30
  80012e4:	af00      	add	r7, sp, #0
@@ -1821,13 +1821,13 @@ void Set_Pin_Output (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)
  8001354:	f003 0304 	and.w	r3, r3, #4
  8001358:	60fb      	str	r3, [r7, #12]
  800135a:	68fb      	ldr	r3, [r7, #12]
-	  HAL_GPIO_WritePin(GPIOx, GPIO_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(GPIOx, GPIO_Pin, GPIO_PIN_RESET);
  800135c:	887b      	ldrh	r3, [r7, #2]
  800135e:	2200      	movs	r2, #0
  8001360:	4619      	mov	r1, r3
  8001362:	6878      	ldr	r0, [r7, #4]
  8001364:	f000 ff98 	bl	8002298 <HAL_GPIO_WritePin>
-	GPIO_InitTypeDef GPIO_InitStruct =
+	GPIO_InitTypeDef GPIO_InitStruct = { 0 };
  8001368:	f107 031c 	add.w	r3, r7, #28
  800136c:	2200      	movs	r2, #0
  800136e:	601a      	str	r2, [r3, #0]
@@ -1835,7 +1835,6 @@ void Set_Pin_Output (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)
  8001372:	609a      	str	r2, [r3, #8]
  8001374:	60da      	str	r2, [r3, #12]
  8001376:	611a      	str	r2, [r3, #16]
-	{ 0 };
 
 	GPIO_InitStruct.Pin = GPIO_Pin;
  8001378:	887b      	ldrh	r3, [r7, #2]
@@ -1860,8 +1859,7 @@ void Set_Pin_Output (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)
 
 0800139c <Set_Pin_Input>:
 
-void Set_Pin_Input (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)
-{
+void Set_Pin_Input(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin) {
  800139c:	b580      	push	{r7, lr}
  800139e:	b08c      	sub	sp, #48	; 0x30
  80013a0:	af00      	add	r7, sp, #0
@@ -1921,7 +1919,7 @@ void Set_Pin_Input (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)
  8001410:	f003 0304 	and.w	r3, r3, #4
  8001414:	60fb      	str	r3, [r7, #12]
  8001416:	68fb      	ldr	r3, [r7, #12]
-	GPIO_InitTypeDef GPIO_InitStruct =
+	GPIO_InitTypeDef GPIO_InitStruct = { 0 };
  8001418:	f107 031c 	add.w	r3, r7, #28
  800141c:	2200      	movs	r2, #0
  800141e:	601a      	str	r2, [r3, #0]
@@ -1929,7 +1927,6 @@ void Set_Pin_Input (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)
  8001422:	609a      	str	r2, [r3, #8]
  8001424:	60da      	str	r2, [r3, #12]
  8001426:	611a      	str	r2, [r3, #16]
-	{ 0 };
 	GPIO_InitStruct.Pin = GPIO_Pin;
  8001428:	887b      	ldrh	r3, [r7, #2]
  800142a:	61fb      	str	r3, [r7, #28]
@@ -1953,28 +1950,27 @@ void Set_Pin_Input (GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)
 
 0800144c <DHT11_Start>:
 
-void DHT11_Start (void)
-{
+void DHT11_Start(void) {
  800144c:	b580      	push	{r7, lr}
  800144e:	af00      	add	r7, sp, #0
-	Set_Pin_Output (DHT11_PORT, DHT11_PIN);  // set the pin as output
+	Set_Pin_Output(DHT11_PORT, DHT11_PIN);  // set the pin as output
  8001450:	2102      	movs	r1, #2
  8001452:	480d      	ldr	r0, [pc, #52]	; (8001488 <DHT11_Start+0x3c>)
  8001454:	f7ff ff44 	bl	80012e0 <Set_Pin_Output>
-	HAL_GPIO_WritePin (DHT11_PORT, DHT11_PIN, 0);   // pull the pin low
+	HAL_GPIO_WritePin(DHT11_PORT, DHT11_PIN, 0);   // pull the pin low
  8001458:	2200      	movs	r2, #0
  800145a:	2102      	movs	r1, #2
  800145c:	480a      	ldr	r0, [pc, #40]	; (8001488 <DHT11_Start+0x3c>)
  800145e:	f000 ff1b 	bl	8002298 <HAL_GPIO_WritePin>
-	delay (18000);   // wait for 18ms
+	delay(18000);   // wait for 18ms
  8001462:	f244 6050 	movw	r0, #18000	; 0x4650
  8001466:	f7ff ff21 	bl	80012ac <delay>
-    HAL_GPIO_WritePin (DHT11_PORT, DHT11_PIN, 1);   // pull the pin high
+	HAL_GPIO_WritePin(DHT11_PORT, DHT11_PIN, 1);   // pull the pin high
  800146a:	2201      	movs	r2, #1
  800146c:	2102      	movs	r1, #2
  800146e:	4806      	ldr	r0, [pc, #24]	; (8001488 <DHT11_Start+0x3c>)
  8001470:	f000 ff12 	bl	8002298 <HAL_GPIO_WritePin>
-	delay (20);   // wait for 20us
+	delay(20);   // wait for 20us
  8001474:	2014      	movs	r0, #20
  8001476:	f7ff ff19 	bl	80012ac <delay>
 	Set_Pin_Input(DHT11_PORT, DHT11_PIN);    // set as input
@@ -1989,43 +1985,44 @@ void DHT11_Start (void)
 
 0800148c <DHT11_Check_Response>:
 
-uint8_t DHT11_Check_Response (void)
-{
+uint8_t DHT11_Check_Response(void) {
  800148c:	b580      	push	{r7, lr}
  800148e:	b082      	sub	sp, #8
  8001490:	af00      	add	r7, sp, #0
 	uint8_t Response = 0;
  8001492:	2300      	movs	r3, #0
  8001494:	71fb      	strb	r3, [r7, #7]
-	delay (40);
+	delay(40);
  8001496:	2028      	movs	r0, #40	; 0x28
  8001498:	f7ff ff08 	bl	80012ac <delay>
-	if (!(HAL_GPIO_ReadPin (DHT11_PORT, DHT11_PIN)))
+	if (!(HAL_GPIO_ReadPin(DHT11_PORT, DHT11_PIN))) {
  800149c:	2102      	movs	r1, #2
  800149e:	4811      	ldr	r0, [pc, #68]	; (80014e4 <DHT11_Check_Response+0x58>)
  80014a0:	f000 fee2 	bl	8002268 <HAL_GPIO_ReadPin>
  80014a4:	4603      	mov	r3, r0
  80014a6:	2b00      	cmp	r3, #0
  80014a8:	d10e      	bne.n	80014c8 <DHT11_Check_Response+0x3c>
-	{
-		delay (80);
+		delay(80);
  80014aa:	2050      	movs	r0, #80	; 0x50
  80014ac:	f7ff fefe 	bl	80012ac <delay>
-		if ((HAL_GPIO_ReadPin (DHT11_PORT, DHT11_PIN))) Response = 1;
+		if ((HAL_GPIO_ReadPin(DHT11_PORT, DHT11_PIN))) {
  80014b0:	2102      	movs	r1, #2
  80014b2:	480c      	ldr	r0, [pc, #48]	; (80014e4 <DHT11_Check_Response+0x58>)
  80014b4:	f000 fed8 	bl	8002268 <HAL_GPIO_ReadPin>
  80014b8:	4603      	mov	r3, r0
  80014ba:	2b00      	cmp	r3, #0
  80014bc:	d002      	beq.n	80014c4 <DHT11_Check_Response+0x38>
+			Response = 1;
  80014be:	2301      	movs	r3, #1
  80014c0:	71fb      	strb	r3, [r7, #7]
  80014c2:	e001      	b.n	80014c8 <DHT11_Check_Response+0x3c>
-		else Response = -1; // 255
+		} else {
+			Response = -1;
  80014c4:	23ff      	movs	r3, #255	; 0xff
  80014c6:	71fb      	strb	r3, [r7, #7]
+		} // 255
 	}
-	while ((HAL_GPIO_ReadPin (DHT11_PORT, DHT11_PIN)));   // wait for the pin to go low
+	while ((HAL_GPIO_ReadPin(DHT11_PORT, DHT11_PIN)))
  80014c8:	bf00      	nop
  80014ca:	2102      	movs	r1, #2
  80014cc:	4805      	ldr	r0, [pc, #20]	; (80014e4 <DHT11_Check_Response+0x58>)
@@ -2033,6 +2030,7 @@ uint8_t DHT11_Check_Response (void)
  80014d2:	4603      	mov	r3, r0
  80014d4:	2b00      	cmp	r3, #0
  80014d6:	d1f8      	bne.n	80014ca <DHT11_Check_Response+0x3e>
+		;   // wait for the pin to go low
 
 	return Response;
  80014d8:	79fb      	ldrb	r3, [r7, #7]
@@ -2046,18 +2044,16 @@ uint8_t DHT11_Check_Response (void)
 
 080014e8 <DHT11_Read>:
 
-uint8_t DHT11_Read (void)
-{
+uint8_t DHT11_Read(void) {
  80014e8:	b580      	push	{r7, lr}
  80014ea:	b082      	sub	sp, #8
  80014ec:	af00      	add	r7, sp, #0
-	uint8_t i,j;
-	for (j=0;j<8;j++)
+	uint8_t i, j;
+	for (j = 0; j < 8; j++) {
  80014ee:	2300      	movs	r3, #0
  80014f0:	71bb      	strb	r3, [r7, #6]
  80014f2:	e037      	b.n	8001564 <DHT11_Read+0x7c>
-	{
-		while (!(HAL_GPIO_ReadPin (DHT11_PORT, DHT11_PIN)));   // wait for the pin to go high
+		while (!(HAL_GPIO_ReadPin(DHT11_PORT, DHT11_PIN)))
  80014f4:	bf00      	nop
  80014f6:	2102      	movs	r1, #2
  80014f8:	481e      	ldr	r0, [pc, #120]	; (8001574 <DHT11_Read+0x8c>)
@@ -2065,10 +2061,11 @@ uint8_t DHT11_Read (void)
  80014fe:	4603      	mov	r3, r0
  8001500:	2b00      	cmp	r3, #0
  8001502:	d0f8      	beq.n	80014f6 <DHT11_Read+0xe>
-		delay (40);   // wait for 40 us
+			;   // wait for the pin to go high
+		delay(40);   // wait for 40 us
  8001504:	2028      	movs	r0, #40	; 0x28
  8001506:	f7ff fed1 	bl	80012ac <delay>
-		if (!(HAL_GPIO_ReadPin (DHT11_PORT, DHT11_PIN)))   // if the pin is low
+		if (!(HAL_GPIO_ReadPin(DHT11_PORT, DHT11_PIN)))   // if the pin is low
  800150a:	2102      	movs	r1, #2
  800150c:	4819      	ldr	r0, [pc, #100]	; (8001574 <DHT11_Read+0x8c>)
  800150e:	f000 feab 	bl	8002268 <HAL_GPIO_ReadPin>
@@ -2076,7 +2073,7 @@ uint8_t DHT11_Read (void)
  8001514:	2b00      	cmp	r3, #0
  8001516:	d10e      	bne.n	8001536 <DHT11_Read+0x4e>
 		{
-			i&= ~(1<<(7-j));   // write 0
+			i &= ~(1 << (7 - j));   // write 0
  8001518:	79bb      	ldrb	r3, [r7, #6]
  800151a:	f1c3 0307 	rsb	r3, r3, #7
  800151e:	2201      	movs	r2, #1
@@ -2089,8 +2086,8 @@ uint8_t DHT11_Read (void)
  8001530:	b25b      	sxtb	r3, r3
  8001532:	71fb      	strb	r3, [r7, #7]
  8001534:	e00b      	b.n	800154e <DHT11_Read+0x66>
-		}
-		else i|= (1<<(7-j));  // if the pin is high, write 1
+		} else {
+			i |= (1 << (7 - j));
  8001536:	79bb      	ldrb	r3, [r7, #6]
  8001538:	f1c3 0307 	rsb	r3, r3, #7
  800153c:	2201      	movs	r2, #1
@@ -2100,7 +2097,8 @@ uint8_t DHT11_Read (void)
  8001548:	4313      	orrs	r3, r2
  800154a:	b25b      	sxtb	r3, r3
  800154c:	71fb      	strb	r3, [r7, #7]
-		while ((HAL_GPIO_ReadPin (DHT11_PORT, DHT11_PIN)));  // wait for the pin to go low
+		}  // if the pin is high, write 1
+		while ((HAL_GPIO_ReadPin(DHT11_PORT, DHT11_PIN)))
  800154e:	bf00      	nop
  8001550:	2102      	movs	r1, #2
  8001552:	4808      	ldr	r0, [pc, #32]	; (8001574 <DHT11_Read+0x8c>)
@@ -2108,13 +2106,14 @@ uint8_t DHT11_Read (void)
  8001558:	4603      	mov	r3, r0
  800155a:	2b00      	cmp	r3, #0
  800155c:	d1f8      	bne.n	8001550 <DHT11_Read+0x68>
-	for (j=0;j<8;j++)
+	for (j = 0; j < 8; j++) {
  800155e:	79bb      	ldrb	r3, [r7, #6]
  8001560:	3301      	adds	r3, #1
  8001562:	71bb      	strb	r3, [r7, #6]
  8001564:	79bb      	ldrb	r3, [r7, #6]
  8001566:	2b07      	cmp	r3, #7
  8001568:	d9c4      	bls.n	80014f4 <DHT11_Read+0xc>
+			;  // wait for the pin to go low
 	}
 	return i;
  800156a:	79fb      	ldrb	r3, [r7, #7]

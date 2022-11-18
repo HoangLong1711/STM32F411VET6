@@ -105,7 +105,7 @@ int main(void)
   {
 		HAL_GPIO_WritePin(IN1_PORT, IN1_PIN, 0);
 		HAL_GPIO_WritePin(IN2_PORT, IN2_PIN, 1);
-		HAL_GPIO_WritePin(RUNLED_PORT, RUNLED_PIN, 1);
+		HAL_GPIO_WritePin(RUNLED_PORT, RUNLED_PIN, 0);
 		__HAL_TIM_SetCompare(&htim2,TIM_CHANNEL_1,99);
 		HAL_Delay(2000);
 

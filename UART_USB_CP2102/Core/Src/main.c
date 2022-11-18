@@ -55,7 +55,7 @@ static void MX_USART6_UART_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-char charSendUART[30] = "Truong Bach Khoa - CTU \n";
+
 /* USER CODE END 0 */
 
 /**
@@ -88,14 +88,14 @@ int main(void)
   MX_GPIO_Init();
   MX_USART6_UART_Init();
   /* USER CODE BEGIN 2 */
-
+  char charSendUART[30] = "Truong Bach Khoa - CTU \n";
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  HAL_UART_Transmit(&huart6, charSendUART, 30, 1000);
+	  HAL_UART_Transmit(&huart6, charSendUART, strlen(charSendUART), 1000);
 	  HAL_Delay(1000);
     /* USER CODE END WHILE */
 
@@ -188,6 +188,7 @@ static void MX_GPIO_Init(void)
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
 
 }
 

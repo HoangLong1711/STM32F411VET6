@@ -402,8 +402,8 @@ int main(void)
  8000506:	f44f 5100 	mov.w	r1, #8192	; 0x2000
  800050a:	480a      	ldr	r0, [pc, #40]	; (8000534 <main+0x58>)
  800050c:	f000 fd24 	bl	8000f58 <HAL_GPIO_WritePin>
-		HAL_GPIO_WritePin(RUNLED_PORT, RUNLED_PIN, 1);
- 8000510:	2201      	movs	r2, #1
+		HAL_GPIO_WritePin(RUNLED_PORT, RUNLED_PIN, 0);
+ 8000510:	2200      	movs	r2, #0
  8000512:	f44f 6100 	mov.w	r1, #2048	; 0x800
  8000516:	4807      	ldr	r0, [pc, #28]	; (8000534 <main+0x58>)
  8000518:	f000 fd1e 	bl	8000f58 <HAL_GPIO_WritePin>

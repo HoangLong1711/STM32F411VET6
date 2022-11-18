@@ -1,26 +1,10 @@
-14:03:33 **** Incremental Build of configuration Debug for project DHT11 ****
+15:46:37 **** Incremental Build of configuration Debug for project DHT11 ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:199:3: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
-  199 |   sprintf(Humi, "Humi: %.2f", Humidity);
-      |   ^~~~~~~
-../Core/Src/main.c:199:3: warning: incompatible implicit declaration of built-in function 'sprintf'
-../Core/Src/main.c:26:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
-   25 | #include "lcd_text.h"
-  +++ |+#include <stdio.h>
-   26 | /* USER CODE END Includes */
-arm-none-eabi-gcc -o "DHT11.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\STM32F411VET6_LuanVan_LapTrinh\STM32F411VET6\DHT11\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DHT11.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: DHT11.elf
- 
 arm-none-eabi-size   DHT11.elf 
-arm-none-eabi-objdump -h -S  DHT11.elf  > "DHT11.list"
    text	   data	    bss	    dec	    hex	filename
   32692	    488	   1688	  34868	   8834	DHT11.elf
 Finished building: default.size.stdout
  
-Finished building: DHT11.list
- 
 
-14:03:34 Build Finished. 0 errors, 2 warnings. (took 662ms)
+15:46:37 Build Finished. 0 errors, 0 warnings. (took 238ms)
 

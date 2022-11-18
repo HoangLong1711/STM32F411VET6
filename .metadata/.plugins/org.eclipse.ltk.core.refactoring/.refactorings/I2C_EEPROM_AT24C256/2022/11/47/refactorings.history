@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;I2C_EEPROM_AT24C256.ioc&apos; to &apos;I2C_EEPROM_AT24C256&apos;" description="Move &apos;I2C_EEPROM_AT24C256.ioc&apos; to &apos;I2C_EEPROM_AT24C256&apos;" destination="/I2C_EEPROM_AT24C256" element1="Debug/I2C_EEPROM_AT24C256.ioc" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1668743092202" updateReferences="true"/>
+</session>

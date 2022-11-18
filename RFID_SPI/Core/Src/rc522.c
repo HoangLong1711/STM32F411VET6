@@ -1,34 +1,17 @@
-// Mifare RC522 RFID Card reader 13.56 MHz
-// STM32F103 RFID RC522 SPI1 / UART / USB / Keil HAL / 2017 vk.com/zz555
-
-// PA0  - (OUT)	LED2
-// PA1	- (IN)	BTN1
-// PA4  - (OUT)	SPI1_NSS (Soft)
-// PA5  - (OUT)	SPI1_SCK
-// PA6  - (IN)	SPI1_MISO (Master In)
-// PA7  - (OUT)	SPI1_MOSI (Master Out)
-// PA9	- (OUT)	TX UART1 (RX-RS232)
-// PA10	- (IN)	RX UART1 (TX-RS232)
-// PA11 - (OUT) USB_DM
-// PA12 - (OUT) USB_DP
-// PA13 - (IN) 	SWDIO
-// PA14 - (IN) 	SWDCLK
-// PC13 - (OUT)	LED1
-
-// MFRC522		STM32F103		DESCRIPTION
-// CS (SDA)		PA4					SPI1_NSS	Chip select for SPI
-// SCK				PA5					SPI1_SCK	Serial Clock for SPI
-// MOSI				PA7 				SPI1_MOSI	Master In Slave Out for SPI
-// MISO				PA6					SPI1_MISO	Master Out Slave In for SPI
-// IRQ				-						Irq
-// GND				GND					Ground
-// RST				3.3V				Reset pin (3.3V)
-// VCC				3.3V				3.3V power
+// MFRC522		STM32F411		DESCRIPTION
+// CS (SDA)		PA4			SPI1_NSS	Chip select for SPI
+// SCK			PA5			SPI1_SCK	Serial Clock for SPI
+// MOSI			PA7 		SPI1_MOSI	Master In Slave Out for SPI
+// MISO			PA6			SPI1_MISO	Master Out Slave In for SPI
+// IRQ			-			Irq
+// GND			GND			Ground
+// RST			3.3V		Reset pin (3.3V)
+// VCC			3.3V		3.3V power
 
 #include "stm32f4xx_hal.h"
 #include "rc522.h"
 
-extern SPI_HandleTypeDef hspi2;
+extern SPI_HandleTypeDef hspi3;
 
 // RC522
 extern uint8_t MFRC522_Check(uint8_t* id);
@@ -56,18 +39,8 @@ uint8_t SPI1SendByte(uint8_t data) {
 	unsigned char readValue[1];
 	
 	writeCommand[0] = data;
-	HAL_SPI_TransmitReceive(&hspi2, (uint8_t*)&writeCommand, (uint8_t*)&readValue, 1, 10);
+	HAL_SPI_TransmitReceive(&hspi3, (uint8_t*)&writeCommand, (uint8_t*)&readValue, 1, 10);
 	return readValue[0];
-	
-	//while (SPI1->SR & SPI_SR_BSY);								// STM32F030 - ждем конец передачи
-	//while (SPI1->SR & SPI_I2S_FLAG_BSY);					// STM32F103 - ждем конец передачи
-
-	//while (!(SPI1->SR & SPI_SR_TXE));     				// убедиться, что предыдущая передача завершена (STM32F103)
-	//SPI1->DR = data;															// вывод в SPI1
-	//while (!(SPI1->SR & SPI_SR_RXNE));     				// ждем окончания обмена (STM32F103)
-	//for (uint8_t i=0; i<50; i++) {};
-	//data = SPI1->DR;															// читаем принятые данные
-	//return data;
 }
 
 void SPI1_WriteReg(uint8_t address, uint8_t value) {
