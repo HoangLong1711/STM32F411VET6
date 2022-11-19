@@ -1,4 +1,4 @@
-15:46:54 **** Incremental Build of configuration Debug for project RFID_SPI ****
+08:45:54 **** Incremental Build of configuration Debug for project RFID_SPI ****
 make -j8 all 
 arm-none-eabi-size   RFID_SPI.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   RFID_SPI.elf
 Finished building: default.size.stdout
  
 
-15:46:55 Build Finished. 0 errors, 0 warnings. (took 158ms)
+08:45:54 Build Finished. 0 errors, 0 warnings. (took 172ms)
 

@@ -1,4 +1,4 @@
-15:46:39 **** Incremental Build of configuration Debug for project TIMER_PWM_L298N ****
+09:38:15 **** Incremental Build of configuration Debug for project TIMER_PWM_L298N ****
 make -j8 all 
 arm-none-eabi-size   TIMER_PWM_L298N.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   TIMER_PWM_L298N.elf
 Finished building: default.size.stdout
  
 
-15:46:40 Build Finished. 0 errors, 0 warnings. (took 159ms)
+09:38:15 Build Finished. 0 errors, 0 warnings. (took 231ms)
 
