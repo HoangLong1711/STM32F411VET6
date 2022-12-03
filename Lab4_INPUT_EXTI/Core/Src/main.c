@@ -53,7 +53,6 @@ static void MX_GPIO_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
 int8_t mode = 1;
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
@@ -65,7 +64,11 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 		mode = 0;
 	}
 	HAL_Delay(500);
-	while (HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_14) == GPIO_PIN_RESET) {
+	uint32_t startTime = HAL_GetTick();
+	while (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_RESET) {
+		if (HAL_GetTick() - startTime > 3000) {
+			break;
+		}
 	}
 	HAL_Delay(100); // Error
 	EXTI->PR = GPIO_Pin;
@@ -167,17 +170,17 @@ static void MX_GPIO_Init(void)
   GPIO_InitTypeDef GPIO_InitStruct = {0};
 
   /* GPIO Ports Clock Enable */
-  __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin : PD14 */
-  GPIO_InitStruct.Pin = GPIO_PIN_14;
+  /*Configure GPIO pin : PA0 */
+  GPIO_InitStruct.Pin = GPIO_PIN_0;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PD15 */
   GPIO_InitStruct.Pin = GPIO_PIN_15;
@@ -187,8 +190,8 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
-  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 1, 0);
-  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
+  HAL_NVIC_SetPriority(EXTI0_IRQn, 1, 0);
+  HAL_NVIC_EnableIRQ(EXTI0_IRQn);
 
 }
 

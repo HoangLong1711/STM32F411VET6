@@ -33,10 +33,10 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define CLK_GPIO GPIOD
-#define CLK_PIN GPIO_PIN_13
+#define CLK_PIN GPIO_PIN_11
 
 #define LATCH_GPIO GPIOD
-#define LATCH_PIN GPIO_PIN_14
+#define LATCH_PIN GPIO_PIN_13
 
 #define DATA_GPIO GPIOD
 #define DATA_PIN GPIO_PIN_15
@@ -106,7 +106,9 @@ static void MX_GPIO_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+int delayA = 0;
+int delayB = 2;
+int delayC = 2;
 void CLK()
 {
 	HAL_GPIO_WritePin(CLK_GPIO, CLK_PIN, GPIO_PIN_SET);
@@ -184,7 +186,7 @@ void shiftDataLedMatrix(int hexOutLine, int hexLeft, int hexMid, int hexRight,
 			pushHEX(0x00);
 			pushHEX(rowsData[positionMaHexRigth][i]);
 			LATCH();
-			HAL_Delay(1);
+			HAL_Delay(delayA);
 		}
 		// This step push Hex Value form Old Right to Mid Matrix Led
 		for (int j = 0; j < (7 - step); j++) {
@@ -193,7 +195,7 @@ void shiftDataLedMatrix(int hexOutLine, int hexLeft, int hexMid, int hexRight,
 			pushHEX(0x00);
 			pushHEX(rowsData[positionMaHexMid][7 - j]);
 			LATCH();
-			HAL_Delay(1);
+			HAL_Delay(delayA);
 		}
 		// This step get new Hex value from  Old Right to Mid Matrix Led
 		for (int a = 0; a <= count; a++) {
@@ -202,7 +204,7 @@ void shiftDataLedMatrix(int hexOutLine, int hexLeft, int hexMid, int hexRight,
 			pushHEX(0x00);
 			pushHEX(rowsData[positionMaHexMid][a]);
 			LATCH();
-			HAL_Delay(1);
+			HAL_Delay(delayA);
 		}
 		// This step push Hex Value form Old Mid to Left Matrix Led
         for(int b = 0; b < (7-step); b++)
@@ -212,7 +214,7 @@ void shiftDataLedMatrix(int hexOutLine, int hexLeft, int hexMid, int hexRight,
           pushHEX(0x00);
           pushHEX(rowsData[positionMaHexLeft][7-b]);
           LATCH();
-          HAL_Delay(1);
+          HAL_Delay(delayA);
         }
         // This step get new Hex value from  Old Mid to Left Matrix Led
         for(int c = 0;c<= count;c++)
@@ -222,7 +224,7 @@ void shiftDataLedMatrix(int hexOutLine, int hexLeft, int hexMid, int hexRight,
           pushHEX(colsSelect[7-step+c]);
           pushHEX(rowsData[positionMaHexLeft][c]);
           LATCH();
-          HAL_Delay(1);
+          HAL_Delay(delayA);
         }
         // This step push Hex Value form Old Left to Get out of Matrix Led
 		for (int d = 0; d < (7 - step); d++) {
@@ -231,21 +233,20 @@ void shiftDataLedMatrix(int hexOutLine, int hexLeft, int hexMid, int hexRight,
 			pushHEX(colsSelect[6 - d - step]);
 			pushHEX(rowsData[positionMaHexOut][7 - d]);
 			LATCH();
-			HAL_Delay(1);
+			HAL_Delay(delayA);
 		}
 		count++;
-		HAL_Delay(1);
+		HAL_Delay(delayB);
 	}
 
 }
 
-void displayshiftMatrix(char arrGet[])
-{
-	  int lenghtOfString = strlen(arrGet);
-	  for(int i=0;i<lenghtOfString+2;i++)
-	  {
-		  shiftDataLedMatrix(i-3,i-2,i-1,i,arrGet);
-	  }
+void displayshiftMatrix(char arrGet[]) {
+	int lenghtOfString = strlen(arrGet);
+	for (int i = 0; i < lenghtOfString + 2; i++) {
+		shiftDataLedMatrix(i - 3, i - 2, i - 1, i, arrGet);
+		HAL_Delay(delayC);
+	}
 }
 
 void displayStandStillMatrix(char arrGet[]) {
@@ -259,7 +260,7 @@ void displayStandStillMatrix(char arrGet[]) {
 		pushHEX(0x00);
 		pushHEX(rowsData[positionMaHexLeft][i]);
 		LATCH();
-		HAL_Delay(1);
+		HAL_Delay(delayA);
 	}
 	for (int i = 7; i >= 0; i--) {
 		pushHEX(0x00);
@@ -267,7 +268,7 @@ void displayStandStillMatrix(char arrGet[]) {
 		pushHEX(0x00);
 		pushHEX(rowsData[positionMaHexMid][i]);
 		LATCH();
-		HAL_Delay(1);
+		HAL_Delay(delayA);
 	}
 	for (int i = 7; i >= 0; i--) {
 
@@ -276,7 +277,7 @@ void displayStandStillMatrix(char arrGet[]) {
 		pushHEX(colsSelect[i]);
 		pushHEX(rowsData[positionMaHexRigth][i]);
 		LATCH();
-		HAL_Delay(1);
+		HAL_Delay(delayA);
 	}
 }
 /* USER CODE END 0 */
@@ -387,10 +388,10 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_11|GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : PD13 PD14 PD15 */
-  GPIO_InitStruct.Pin = GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15;
+  /*Configure GPIO pins : PD11 PD13 PD14 PD15 */
+  GPIO_InitStruct.Pin = GPIO_PIN_11|GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;

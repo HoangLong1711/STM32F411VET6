@@ -1,10 +1,17 @@
-15:46:38 **** Incremental Build of configuration Debug for project Lab3_GPIO_INPUT ****
+14:52:15 **** Incremental Build of configuration Debug for project Lab3_GPIO_INPUT ****
 make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Lab3_GPIO_INPUT.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\STM32F411VET6_LuanVan_LapTrinh\STM32F411VET6\Lab3_GPIO_INPUT\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab3_GPIO_INPUT.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab3_GPIO_INPUT.elf
+ 
 arm-none-eabi-size   Lab3_GPIO_INPUT.elf 
+arm-none-eabi-objdump -h -S  Lab3_GPIO_INPUT.elf  > "Lab3_GPIO_INPUT.list"
    text	   data	    bss	    dec	    hex	filename
-   5972	     20	   1572	   7564	   1d8c	Lab3_GPIO_INPUT.elf
+   6032	     20	   1572	   7624	   1dc8	Lab3_GPIO_INPUT.elf
 Finished building: default.size.stdout
  
+Finished building: Lab3_GPIO_INPUT.list
+ 
 
-15:46:38 Build Finished. 0 errors, 0 warnings. (took 161ms)
+14:52:15 Build Finished. 0 errors, 0 warnings. (took 484ms)
 

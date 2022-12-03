@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="rowsData"/>
+		<item key="selection" value="HAL_Delay(delayA);"/>
 		<list key="findhistory">
+			<item value="HAL_Delay(1);"/>
 			<item value="&#x09;  HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);"/>
 			<item value="rowsDATA"/>
 			<item value="dataRow"/>
@@ -18,6 +19,7 @@
 			<item value="hienthi"/>
 		</list>
 		<list key="replacehistory">
+			<item value="HAL_Delay(delayA);"/>
 			<item value="rowsData"/>
 			<item value="rowsDATA"/>
 			<item value="colsSelect"/>

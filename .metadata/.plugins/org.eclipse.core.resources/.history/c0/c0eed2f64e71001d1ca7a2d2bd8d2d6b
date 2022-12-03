@@ -1,0 +1,436 @@
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * @file           : main.c
+  * @brief          : Main program body
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2022 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
+
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
+#include <stdio.h>
+#include <string.h>
+/* USER CODE END Includes */
+
+/* Private typedef -----------------------------------------------------------*/
+/* USER CODE BEGIN PTD */
+
+/* USER CODE END PTD */
+
+/* Private define ------------------------------------------------------------*/
+/* USER CODE BEGIN PD */
+#define CLK_GPIO GPIOD
+#define CLK_PIN GPIO_PIN_11
+
+#define LATCH_GPIO GPIOD
+#define LATCH_PIN GPIO_PIN_13
+
+#define DATA_GPIO GPIOD
+#define DATA_PIN GPIO_PIN_15
+/* USER CODE END PD */
+
+/* Private macro -------------------------------------------------------------*/
+/* USER CODE BEGIN PM */
+
+/* USER CODE END PM */
+
+/* Private variables ---------------------------------------------------------*/
+
+/* USER CODE BEGIN PV */
+
+int rowsData[][8] = {
+		{ 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF }, //  (space) 0
+		{ 0xFF, 0x00, 0x7E, 0x7E, 0x7E, 0x00, 0xFF, 0xFF }, //	0
+		{ 0xFF, 0xFF, 0xFF, 0xBF, 0x00, 0xFF, 0xFF, 0xFF }, //	1
+		{ 0xFF, 0x60, 0x6E, 0x6E, 0x6E, 0x0E, 0xFF, 0xFF }, //	2
+		{ 0xFF, 0x6E, 0x6E, 0x6E, 0x6E, 0x00, 0xFF, 0xFF }, //	3
+		{ 0xFF, 0x0F, 0xEF, 0xEF, 0xEF, 0x00, 0xFF, 0xFF }, //	4
+		{ 0xFF, 0x0E, 0x6E, 0x6E, 0x6E, 0x60, 0xFF, 0xFF }, //	5
+		{ 0xFF, 0x00, 0x6E, 0x6E, 0x6E, 0x60, 0xFF, 0xFF }, //	6
+		{ 0xFF, 0x7F, 0x7F, 0x70, 0x6F, 0x1F, 0xFF, 0xFF }, //	7
+		{ 0xFF, 0x00, 0x6E, 0x6E, 0x6E, 0x00, 0xFF, 0xFF }, //	8
+		{ 0xFF, 0x0E, 0x6E, 0x6E, 0x6E, 0x00, 0xFF, 0xFF }, //	9
+		{ 0xFF, 0x80, 0x77, 0x77, 0x77, 0x80, 0xFF, 0xFF }, //  A
+		{ 0xFF, 0x00, 0x6E, 0x6E, 0x6E, 0x91, 0xFF, 0xFF }, //	B
+		{ 0xFF, 0x81, 0x7E, 0x7E, 0x7E, 0xBD, 0xFF, 0xFF }, //	C
+		{ 0xFF, 0x00, 0x7E, 0x7E, 0x7E, 0x81, 0xFF, 0xFF }, //	D
+		{ 0xFF, 0x00, 0x6E, 0x6E, 0x6E, 0x7E, 0xFF, 0xFF }, //	E
+		{ 0xFF, 0x00, 0x6F, 0x6F, 0x6F, 0x7F, 0xFF, 0xFF }, //	F
+		{ 0xFF, 0x81, 0x7E, 0x7A, 0x7A, 0xB9, 0xFF, 0xFF }, //	G
+		{ 0xFF, 0x00, 0xF7, 0xF7, 0xF7, 0x00, 0xFF, 0xFF }, //	H
+		{ 0xFF, 0xFF, 0x7E, 0x00, 0x7E, 0xFF, 0xFF, 0xFF }, //	I
+		{ 0xFF, 0xF9, 0xFE, 0xFE, 0xFE, 0x01, 0xFF, 0xFF }, //	J
+		{ 0xFF, 0x00, 0xE7, 0xDB, 0xBD, 0x7E, 0xFF, 0xFF }, //	K
+		{ 0xFF, 0x00, 0xFE, 0xFE, 0xFE, 0xFE, 0xFF, 0xFF }, //	L
+		{ 0xFF, 0x00, 0xBF, 0xDF, 0xBF, 0x00, 0xFF, 0xFF }, //	M
+		{ 0xFF, 0x00, 0xDF, 0xEF, 0xF7, 0xFB, 0x00, 0xFF }, //	N
+		{ 0xFF, 0x81, 0x7E, 0x7E, 0x7E, 0x81, 0xFF, 0xFF }, //	O
+		{ 0xFF, 0x00, 0x77, 0x77, 0x77, 0x8F, 0xFF, 0xFF }, //	P
+		{ 0xFF, 0x81, 0x7E, 0x7A, 0x7C, 0x80, 0xFF, 0xFF }, //	Q
+		{ 0xFF, 0x80, 0x77, 0x73, 0x75, 0x8E, 0xFF, 0xFF }, //	R
+		{ 0xFF, 0x9D, 0x6E, 0x6E, 0x6E, 0xB1, 0xFF, 0xFF }, //	S
+		{ 0xFF, 0x7F, 0x7F, 0x00, 0x7F, 0x7F, 0xFF, 0xFF }, //	T
+		{ 0xFF, 0x01, 0xFE, 0xFE, 0xFE, 0x01, 0xFF, 0xFF }, //	U
+		{ 0xFF, 0x03, 0xFD, 0xFE, 0xFE, 0xFD, 0x03, 0xFF }, //	V
+		{ 0xFF, 0x00, 0xFD, 0xFB, 0xFB, 0xFD, 0x00, 0xFF }, //	W
+		{ 0xFF, 0x38, 0xD7, 0xEF, 0xEF, 0xD7, 0x38, 0xFF }, //	X
+		{ 0xFF, 0x1F, 0xEF, 0xF0, 0xEF, 0x1F, 0xFF, 0xFF }, //	Y
+		{ 0xFF, 0x7C, 0x7A, 0x76, 0x6E, 0x1E, 0xFF, 0xFF }, //	Z
+
+		};
+int colsSelect[8] = {0x80, 0x40, 0x20, 0x10, 0x08, 0x04, 0x02, 0x01};
+
+//char charPrint[]="TRUONG BACH KHOA BO MON DIEN TU VIEN THONG NGANH KY THUAT MAY TINH";
+char charPrint[]="CTU";
+/* USER CODE END PV */
+
+/* Private function prototypes -----------------------------------------------*/
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+/* USER CODE BEGIN PFP */
+
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+
+void CLK()
+{
+	HAL_GPIO_WritePin(CLK_GPIO, CLK_PIN, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(CLK_GPIO, CLK_PIN, GPIO_PIN_RESET);
+}
+
+void LATCH()
+{
+	HAL_GPIO_WritePin(LATCH_GPIO, LATCH_PIN, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LATCH_GPIO, LATCH_PIN, GPIO_PIN_RESET);
+}
+
+void DATA(int value)
+{
+	if(1==value)
+	{
+		HAL_GPIO_WritePin(DATA_GPIO, DATA_PIN, GPIO_PIN_SET);
+	}
+	else
+	{
+		HAL_GPIO_WritePin(DATA_GPIO, DATA_PIN, GPIO_PIN_RESET);
+	}
+	CLK();
+}
+
+void pushHEX(int hexValue)
+{
+	for (int i = 0; i < 8; i++) {
+		if (hexValue & 0x01) {
+			DATA(1);
+		} else {
+			DATA(0);
+		}
+		hexValue >>= 1;
+	}
+}
+
+int checkHexValue(int getValue,char arrGet[]) {
+	int resultHexValue = 0;
+	if(getValue<0)
+	{
+		resultHexValue = 0;
+	}
+	else if(getValue>=strlen(arrGet))
+	{
+		resultHexValue = 0;
+	}
+	else
+	{
+		if( ((int)arrGet[getValue])>=48 && ((int)arrGet[getValue]) <=57)
+		{
+			resultHexValue = ((int)arrGet[getValue]) - 48 + 1;
+		}
+		else if( ((int)arrGet[getValue])>=65 && ((int)arrGet[getValue]) <=90)
+		{
+			resultHexValue = ((int)arrGet[getValue]) - 65 + 11;
+		}
+	}
+	return resultHexValue;
+}
+
+void shiftDataLedMatrix(int hexOutLine, int hexLeft, int hexMid, int hexRight,
+		char arrGet[]) {
+	int positionMaHexOut = checkHexValue(hexOutLine, arrGet);
+	int positionMaHexLeft = checkHexValue(hexLeft, arrGet);
+	int positionMaHexMid = checkHexValue(hexMid, arrGet);
+	int positionMaHexRigth = checkHexValue(hexRight, arrGet);
+	int count = 0;
+
+	for (int step = 0; step < 8; step++) {
+		// This step get new Hex Value to Right Matrix Led
+		for (int i = 0; i <= count; i++) {
+			pushHEX(colsSelect[7 - step + i]);
+			pushHEX(0x00);
+			pushHEX(0x00);
+			pushHEX(rowsData[positionMaHexRigth][i]);
+			LATCH();
+			HAL_Delay(1);
+		}
+		// This step push Hex Value form Old Right to Mid Matrix Led
+		for (int j = 0; j < (7 - step); j++) {
+			pushHEX(colsSelect[6 - j - step]);
+			pushHEX(0x00);
+			pushHEX(0x00);
+			pushHEX(rowsData[positionMaHexMid][7 - j]);
+			LATCH();
+			HAL_Delay(1);
+		}
+		// This step get new Hex value from  Old Right to Mid Matrix Led
+		for (int a = 0; a <= count; a++) {
+			pushHEX(0x00);
+			pushHEX(colsSelect[7 - step + a]);
+			pushHEX(0x00);
+			pushHEX(rowsData[positionMaHexMid][a]);
+			LATCH();
+			HAL_Delay(1);
+		}
+		// This step push Hex Value form Old Mid to Left Matrix Led
+        for(int b = 0; b < (7-step); b++)
+        {
+          pushHEX(0x00);
+          pushHEX(colsSelect[6-b-step]);
+          pushHEX(0x00);
+          pushHEX(rowsData[positionMaHexLeft][7-b]);
+          LATCH();
+          HAL_Delay(1);
+        }
+        // This step get new Hex value from  Old Mid to Left Matrix Led
+        for(int c = 0;c<= count;c++)
+        {
+          pushHEX(0x00);
+          pushHEX(0x00);
+          pushHEX(colsSelect[7-step+c]);
+          pushHEX(rowsData[positionMaHexLeft][c]);
+          LATCH();
+          HAL_Delay(1);
+        }
+        // This step push Hex Value form Old Left to Get out of Matrix Led
+		for (int d = 0; d < (7 - step); d++) {
+			pushHEX(0x00);
+			pushHEX(0x00);
+			pushHEX(colsSelect[6 - d - step]);
+			pushHEX(rowsData[positionMaHexOut][7 - d]);
+			LATCH();
+			HAL_Delay(1);
+		}
+		count++;
+		HAL_Delay(1);
+	}
+
+}
+
+void displayshiftMatrix(char arrGet[])
+{
+	  int lenghtOfString = strlen(arrGet);
+	  for(int i=0;i<lenghtOfString+2;i++)
+	  {
+		  shiftDataLedMatrix(i-3,i-2,i-1,i,arrGet);
+		  HAL_Delay(10);
+	  }
+}
+
+void displayStandStillMatrix(char arrGet[]) {
+
+	int positionMaHexLeft = checkHexValue(2, arrGet);
+	int positionMaHexMid = checkHexValue(1, arrGet);
+	int positionMaHexRigth = checkHexValue(0, arrGet);
+	for (int i = 7; i >= 0; i--) {
+		pushHEX(colsSelect[i]);
+		pushHEX(0x00);
+		pushHEX(0x00);
+		pushHEX(rowsData[positionMaHexLeft][i]);
+		LATCH();
+		HAL_Delay(1);
+	}
+	for (int i = 7; i >= 0; i--) {
+		pushHEX(0x00);
+		pushHEX(colsSelect[i]);
+		pushHEX(0x00);
+		pushHEX(rowsData[positionMaHexMid][i]);
+		LATCH();
+		HAL_Delay(1);
+	}
+	for (int i = 7; i >= 0; i--) {
+
+		pushHEX(0x00);
+		pushHEX(0x00);
+		pushHEX(colsSelect[i]);
+		pushHEX(rowsData[positionMaHexRigth][i]);
+		LATCH();
+		HAL_Delay(1);
+	}
+}
+/* USER CODE END 0 */
+
+/**
+  * @brief  The application entry point.
+  * @retval int
+  */
+int main(void)
+{
+  /* USER CODE BEGIN 1 */
+
+  /* USER CODE END 1 */
+
+  /* MCU Configuration--------------------------------------------------------*/
+
+  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  HAL_Init();
+
+  /* USER CODE BEGIN Init */
+
+  /* USER CODE END Init */
+
+  /* Configure the system clock */
+  SystemClock_Config();
+
+  /* USER CODE BEGIN SysInit */
+
+  /* USER CODE END SysInit */
+
+  /* Initialize all configured peripherals */
+  MX_GPIO_Init();
+  /* USER CODE BEGIN 2 */
+
+  /* USER CODE END 2 */
+
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+  while (1)
+  {
+	  displayshiftMatrix(charPrint);
+	  //displayStandStillMatrix("CTU");
+
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+  }
+  /* USER CODE END 3 */
+}
+
+/**
+  * @brief System Clock Configuration
+  * @retval None
+  */
+void SystemClock_Config(void)
+{
+  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+
+  /** Configure the main internal regulator output voltage
+  */
+  __HAL_RCC_PWR_CLK_ENABLE();
+  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+
+  /** Initializes the RCC Oscillators according to the specified parameters
+  * in the RCC_OscInitTypeDef structure.
+  */
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  RCC_OscInitStruct.PLL.PLLM = 4;
+  RCC_OscInitStruct.PLL.PLLN = 100;
+  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
+  RCC_OscInitStruct.PLL.PLLQ = 4;
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Initializes the CPU, AHB and APB buses clocks
+  */
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
+  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}
+
+/**
+  * @brief GPIO Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_GPIO_Init(void)
+{
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+  /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOH_CLK_ENABLE();
+  __HAL_RCC_GPIOD_CLK_ENABLE();
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_11|GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : PD11 PD13 PD14 PD15 */
+  GPIO_InitStruct.Pin = GPIO_PIN_11|GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+}
+
+/* USER CODE BEGIN 4 */
+
+/* USER CODE END 4 */
+
+/**
+  * @brief  This function is executed in case of error occurrence.
+  * @retval None
+  */
+void Error_Handler(void)
+{
+  /* USER CODE BEGIN Error_Handler_Debug */
+  /* User can add his own implementation to report the HAL error return state */
+  __disable_irq();
+  while (1)
+  {
+  }
+  /* USER CODE END Error_Handler_Debug */
+}
+
+#ifdef  USE_FULL_ASSERT
+/**
+  * @brief  Reports the name of the source file and the source line number
+  *         where the assert_param error has occurred.
+  * @param  file: pointer to the source file name
+  * @param  line: assert_param error line source number
+  * @retval None
+  */
+void assert_failed(uint8_t *file, uint32_t line)
+{
+  /* USER CODE BEGIN 6 */
+  /* User can add his own implementation to report the file name and line number,
+     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+  /* USER CODE END 6 */
+}
+#endif /* USE_FULL_ASSERT */

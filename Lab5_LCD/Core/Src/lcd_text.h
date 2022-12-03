@@ -13,23 +13,23 @@
 
 /*------------- Define For Connection -----------------*/
 
-#define RS_PORT		GPIOB
-#define RS_PIN		GPIO_PIN_0
+#define RS_PORT		GPIOD
+#define RS_PIN		GPIO_PIN_11
 
-#define EN_PORT		GPIOB
-#define EN_PIN		GPIO_PIN_2
+#define EN_PORT		GPIOD
+#define EN_PIN		GPIO_PIN_15
 
-#define D7_PORT		GPIOE
-#define D7_PIN		GPIO_PIN_8
+#define D7_PORT		GPIOD
+#define D7_PIN		GPIO_PIN_1
 
-#define D6_PORT		GPIOE
-#define D6_PIN		GPIO_PIN_10
+#define D6_PORT		GPIOD
+#define D6_PIN		GPIO_PIN_3
 
-#define D5_PORT		GPIOE
-#define D5_PIN		GPIO_PIN_12
+#define D5_PORT		GPIOD
+#define D5_PIN		GPIO_PIN_5
 
-#define D4_PORT		GPIOE
-#define D4_PIN		GPIO_PIN_14
+#define D4_PORT		GPIOD
+#define D4_PIN		GPIO_PIN_7
 
 
 /*------------ Declaring Private Macro -----------------*/

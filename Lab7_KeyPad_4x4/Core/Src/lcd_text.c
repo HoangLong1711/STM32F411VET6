@@ -5,7 +5,7 @@ void lcd_init(void)
 {
 
 	HAL_Delay(30);
-
+	PIN_LOW(GPIOD,GPIO_PIN_13);
 	PIN_LOW(D4_PORT,D4_PIN);
 	PIN_HIGH(D5_PORT,D5_PIN);
 	PIN_LOW(D6_PORT,D6_PIN);
